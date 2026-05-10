@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Internal AI Use Policy — Template</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #1a2230;
+      background: #f5f7fa;
+      line-height: 1.65;
+      padding: 40px 20px;
+    }
+    .doc {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 60px 70px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      border-radius: 4px;
+    }
+    .doc-header {
+      border-bottom: 2px solid #1565c0;
+      padding-bottom: 18px;
+      margin-bottom: 32px;
+    }
+    .doc-header .label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: .75rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #06c4d0;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    h1 { font-size: 1.6rem; color: #0b1828; }
+    .disclaimer {
+      background: #fff8e1;
+      border-left: 4px solid #f59e0b;
+      padding: 14px 18px;
+      margin-bottom: 32px;
+      font-size: .85rem;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #6b4f00;
+      line-height: 1.55;
+    }
+    h2 {
+      font-size: 1.05rem;
+      color: #0b1828;
+      margin-top: 28px;
+      margin-bottom: 10px;
+      font-family: 'Inter', system-ui, sans-serif;
+      letter-spacing: .02em;
+    }
+    p, li { font-size: .95rem; margin-bottom: 12px; }
+    ul, ol { padding-left: 22px; margin-bottom: 12px; }
+    li { margin-bottom: 6px; }
+    .placeholder {
+      color: #1565c0;
+      font-style: italic;
+      font-weight: 600;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: .85rem;
+    }
+    th, td {
+      border: 1px solid #d4dae3;
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #eef3f9;
+      color: #0b1828;
+      font-weight: 700;
+    }
+    .tier-r { background: #fef2f2; }
+    .tier-y { background: #fffbeb; }
+    .tier-g { background: #f0fdf4; }
+    .footer-note {
+      margin-top: 48px;
+      padding-top: 18px;
+      border-top: 1px solid #e1e6ec;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: .78rem;
+      color: #6b7886;
+      text-align: center;
+    }
+    .footer-note a { color: #1565c0; }
+    .sig-block {
+      margin-top: 36px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: .85rem;
+    }
+    .sig-line {
+      border-bottom: 1px solid #1a2230;
+      margin: 28px 0 6px;
+      max-width: 360px;
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .doc { box-shadow: none; padding: 40px; }
+      .disclaimer { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <div class="doc">
+    <div class="doc-header">
+      <div class="label">Sample Template</div>
+      <h1>Internal AI Use Policy</h1>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Important:</strong> This is a sample template for informational purposes only.
+      It is not legal or compliance advice. Adapt it to your industry, regulatory environment,
+      and the specific tools your team uses, and have qualified counsel review before adopting.
+    </div>
+
+    <h2>1. Purpose</h2>
+    <p>
+      <span class="placeholder">[Company Name]</span> (&ldquo;the Company&rdquo;) uses artificial-intelligence
+      tools to improve productivity. This policy defines which AI tools may be used, what kinds of
+      information may be processed with them, and the responsibilities of every team member who uses them.
+      It applies to all employees, contractors, and vendors acting on the Company's behalf.
+    </p>
+
+    <h2>2. Definitions</h2>
+    <ul>
+      <li><strong>Confidential Information:</strong> any non-public information about clients, customers, employees, finances, operations, or vendors, including any information subject to a duty of confidentiality, privilege, HIPAA, GLBA, or similar obligations.</li>
+      <li><strong>Public AI Tool:</strong> a consumer-grade AI service such as ChatGPT (Free/Plus), Claude.ai (Free/Pro), or Gemini consumer.</li>
+      <li><strong>Enterprise AI Tool:</strong> an AI service used through an API or enterprise account governed by commercial terms and a Data Processing Agreement.</li>
+    </ul>
+
+    <h2>3. Approved Tools &amp; Permitted Use</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 22%;">Risk Tier</th>
+          <th style="width: 38%;">Tools</th>
+          <th>Permitted Use</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tier-r">
+          <td><strong>High Risk</strong><br>Public AI</td>
+          <td>ChatGPT Free/Plus, Claude.ai Free/Pro, Gemini consumer, <span class="placeholder">[other]</span></td>
+          <td>Public, non-confidential information only. <strong>Never</strong> with client data, financial data, personnel data, or any Confidential Information.</td>
+        </tr>
+        <tr class="tier-y">
+          <td><strong>Conditional</strong><br>Cloud Automation</td>
+          <td>Make.com, Zapier (paid tiers with DPA), <span class="placeholder">[other]</span></td>
+          <td>Administrative use (scheduling, intake, notifications). Confidential Information only when a signed DPA is in place and data minimization is applied.</td>
+        </tr>
+        <tr class="tier-g">
+          <td><strong>Approved</strong><br>Self-Hosted + API</td>
+          <td>Company-hosted n8n + AI API on commercial terms, <span class="placeholder">[other]</span></td>
+          <td>Approved for Confidential Information consistent with documented workflows.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. Prohibited Uses</h2>
+    <ul>
+      <li>Pasting Confidential Information into any Public AI Tool.</li>
+      <li>Uploading client documents, contracts, or records to a personal AI account.</li>
+      <li>Using AI output as a final deliverable without human review.</li>
+      <li>Sharing AI-generated content as the work of the AI tool to third parties without disclosing AI involvement, where disclosure is required.</li>
+    </ul>
+
+    <h2>5. Human Review</h2>
+    <p>
+      AI assists; humans decide. All AI-generated work product that leaves the Company — communications,
+      documents, analyses, recommendations — must be reviewed and approved by a qualified team member
+      before delivery. The reviewer is responsible for accuracy, appropriateness, and compliance.
+    </p>
+
+    <h2>6. Data Minimization</h2>
+    <p>
+      Even with approved tools, send only the minimum information necessary for the task. Redact names,
+      account numbers, and other identifiers when the task does not require them.
+    </p>
+
+    <h2>7. Onboarding &amp; Training</h2>
+    <p>
+      Every team member who will use AI tools must read this policy, sign the acknowledgment below, and
+      complete <span class="placeholder">[training program / orientation]</span> before being granted
+      access to approved tools.
+    </p>
+
+    <h2>8. Vendor &amp; Contract Requirements</h2>
+    <p>
+      Any AI tool that touches Confidential Information must operate under:
+    </p>
+    <ul>
+      <li>A signed Data Processing Agreement.</li>
+      <li>A no-training clause covering Company data.</li>
+      <li>A defined retention period.</li>
+      <li>Breach-notification obligations.</li>
+      <li>A data-deletion right at termination.</li>
+    </ul>
+
+    <h2>9. Reporting &amp; Incidents</h2>
+    <p>
+      Any suspected misuse, unauthorized disclosure, or AI-related incident must be reported to
+      <span class="placeholder">[designated officer / email]</span> within 24 hours of discovery.
+    </p>
+
+    <h2>10. Policy Owner &amp; Review</h2>
+    <p>
+      This policy is owned by <span class="placeholder">[Title — e.g., Managing Partner / Operations Manager]</span>
+      and will be reviewed at least annually, or whenever a new AI tool or class of tool is introduced.
+    </p>
+
+    <div class="sig-block">
+      <strong>Acknowledgment</strong>
+      <p style="margin-top: 10px;">
+        I have read and understand this AI Use Policy and agree to follow it.
+      </p>
+      <div class="sig-line"></div>
+      Name &amp; Title
+      <div class="sig-line"></div>
+      Signature
+      <div class="sig-line"></div>
+      Date
+    </div>
+
+    <div class="footer-note">
+      Template provided by <a href="../index.html">Build Smart by Rob</a> &middot;
+      For informational purposes only. Not legal advice.
+    </div>
+  </div>
+</body>
+</html>

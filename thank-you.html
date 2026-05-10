@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message Received | Built Smart by Rob</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #070e1c 0%, #0b1828 50%, #0e2040 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* dot grid texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(6,196,208,.1) 1px, transparent 1px);
+      background-size: 36px 36px;
+      pointer-events: none;
+    }
+
+    /* glow orb */
+    body::after {
+      content: '';
+      position: fixed;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(6,196,208,.12) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .card {
+      background: rgba(14, 31, 52, 0.92);
+      border: 1px solid #163050;
+      border-radius: 24px;
+      padding: 56px 48px;
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 48px rgba(0,0,0,.5), 0 0 60px rgba(6,196,208,.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    .icon {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1565c0, #06c4d0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: #5a8fb0;
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .highlight {
+      background: rgba(6,196,208,.08);
+      border: 1px solid rgba(6,196,208,.2);
+      border-left: 4px solid #06c4d0;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 28px 0;
+      text-align: left;
+      font-size: .92rem;
+      color: #7aacca;
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #1565c0, #06c4d0);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: .95rem;
+      margin-top: 28px;
+      box-shadow: 0 4px 20px rgba(6,196,208,.25);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(6,196,208,.4); }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 32px;
+      opacity: .5;
+      transition: opacity .2s;
+      text-decoration: none;
+    }
+    .logo-link:hover { opacity: .8; }
+    .logo-link img { height: 32px; width: auto; }
+
+    /* floating home button */
+    .float-home {
+      position: fixed; bottom: 28px; right: 24px; z-index: 999;
+      background: rgba(21,101,192,.85);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: .85rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 4px 20px rgba(6,196,208,.3);
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .3s ease, transform .3s ease;
+      pointer-events: none;
+    }
+    .float-home.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .float-home:hover { background: rgba(21,101,192,1); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <span class="icon">✅</span>
+    <h1>Message Received!</h1>
+    <p>Thanks for reaching out — I've got your message and will be in touch within 24 hours to talk about your project.</p>
+
+    <div class="highlight">
+      📬 <strong style="color:#edf4ff;">What happens next:</strong><br />
+      I'll review the details you shared and follow up to learn more about your business, your goals, and how I can help — no pressure, just a conversation.
+    </div>
+
+    <p>In the meantime, feel free to explore the portfolio or learn more about how automations can save your team serious time.</p>
+
+    <a href="index.html" class="btn">
+      ← Back to Home
+    </a>
+
+    <a href="index.html" class="logo-link">
+      <img src="builtsmartlogo.png" alt="Built Smart by Rob" />
+    </a>
+  </div>
+
+  <a href="index.html" class="float-home" id="float-home" aria-label="Go to homepage">🏠 Home</a>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('float-home');
+      if (!btn) return;
+      window.addEventListener('scroll', function() {
+        btn.classList.toggle('visible', window.scrollY > 300);
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>

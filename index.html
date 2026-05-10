@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Built Smart by Rob — Professional websites and business automation solutions for small businesses. Modern design, smart workflows, real results." />
+  <title>Built Smart by Rob | Websites &amp; Automations for Small Business</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="logo">
+        <img src="builtsmartlogo.png" alt="Built Smart by Rob" style="height:44px; width:auto;" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#automations">Automations</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn-primary nav-cta">Get Started</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#services"    onclick="closeMobileMenu()">Services</a>
+      <a href="#portfolio"   onclick="closeMobileMenu()">Portfolio</a>
+      <a href="#automations" onclick="closeMobileMenu()">Automations</a>
+      <a href="#about"       onclick="closeMobileMenu()">About</a>
+      <a href="#contact"     onclick="closeMobileMenu()">Contact</a>
+      <a href="#contact" class="btn btn-primary" onclick="closeMobileMenu()">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section id="hero" class="section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Smart Solutions for Small Business
+        </div>
+
+        <h1>
+          Your Business,<br />
+          <span class="grad-text">Built Smart.</span>
+        </h1>
+
+        <p>
+          Professional websites and intelligent automations that save you time, impress your clients,
+          and help your small business compete like a big one — without the big-business price tag.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#services"  class="btn btn-primary">Explore Services</a>
+          <a href="#portfolio" class="btn btn-outline">View My Work</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <h3>10+</h3>
+            <p>Sites Launched</p>
+          </div>
+          <div class="hero-stat">
+            <h3>100%</h3>
+            <p>Small Business Focused</p>
+          </div>
+          <div class="hero-stat">
+            <h3>24/7</h3>
+            <p>Automations Running</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating tech card — hidden on mobile -->
+      <div class="hero-visual">
+        <div class="tech-card">
+          <div class="tech-card-header">
+            <div class="tc-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="tc-title">automation.js — Built Smart</span>
+          </div>
+          <div class="tc-body">
+            <p class="tc-line"><span class="cm">// Route new lead from web form</span></p>
+            <p class="tc-line"><span class="kw">const</span> lead = <span class="fn">await</span> form.<span class="fn">capture</span>();</p>
+            <p class="tc-line"><span class="fn">await</span> crm.<span class="fn">addContact</span>(lead);</p>
+            <p class="tc-line"><span class="fn">await</span> email.<span class="fn">sendWelcome</span>(lead);</p>
+            <p class="tc-line"><span class="fn">await</span> slack.<span class="fn">notify</span>(<span class="str">"New lead!"</span>);</p>
+            <p class="tc-line"><span class="cm">// Done in &lt; 2 seconds, zero effort</span></p>
+            <p class="tc-line">&nbsp;</p>
+            <p class="tc-line"><span class="fn">schedule</span>.<span class="fn">every</span>(<span class="str">"day"</span>, <span class="fn">sendReport</span>);</p>
+            <p class="tc-line"><span class="cm">// Your business runs itself&nbsp;</span><span class="tc-cursor"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES
+  ============================================================ -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">What I Do</div>
+        <h2>How I Help Your <span class="grad-text">Business Grow</span></h2>
+        <p>From a website that works around the clock to automations that eliminate busywork — and the infrastructure to run it all at scale.</p>
+      </div>
+
+      <div class="portfolio-tabs reveal">
+        <button class="tab-btn active" data-tab="svc-web">Websites</button>
+        <button class="tab-btn" data-tab="svc-make">Make / Zapier</button>
+        <button class="tab-btn" data-tab="svc-managed">Managed Automation</button>
+      </div>
+
+      <!-- Websites -->
+      <div class="tab-panel active" id="tab-svc-web">
+        <div class="svc-single">
+          <div class="service-card reveal">
+            <div class="service-icon">🌐</div>
+            <h3>Website Design &amp; Development</h3>
+            <p>
+              A professionally designed website is your hardest-working employee — available 24/7,
+              never calls in sick, and makes a great first impression every single time. I build
+              modern, fast, mobile-friendly sites tailored to your brand and your customers.
+            </p>
+            <ul class="service-features">
+              <li>Custom design that matches your brand</li>
+              <li>Mobile-first &amp; fully responsive</li>
+              <li>Fast load times &amp; SEO-ready</li>
+              <li>Contact forms &amp; lead capture</li>
+              <li>Easy to update and maintain</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Start a Project</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Make / Zapier -->
+      <div class="tab-panel" id="tab-svc-make">
+        <div class="svc-single">
+          <div class="service-card reveal">
+            <div class="service-icon" style="background:rgba(6,182,212,.12); border-color:rgba(6,182,212,.25);">⚡</div>
+            <h3>Business Process Automation</h3>
+            <p>
+              Stop wasting hours on repetitive tasks. I design and build smart workflows using Make.com
+              and Zapier that handle data entry, follow-ups, notifications, reporting, and more —
+              automatically — so your team can focus on work that actually moves the needle.
+            </p>
+            <ul class="service-features">
+              <li>Lead capture &amp; CRM automation</li>
+              <li>Email &amp; notification workflows</li>
+              <li>Data sync across your apps</li>
+              <li>AI-enhanced task handling</li>
+              <li>Reporting &amp; scheduling automation</li>
+            </ul>
+            <div class="svc-ownership-note">
+              <h5>Your Account. Your Automations. Your Rules.</h5>
+              <p>
+                Every workflow I build lives inside <em>your</em> Make or Zapier account, connected to your
+                tools with your credentials. You'll need an active subscription with either platform — both
+                offer free tiers to get started — and access to the apps you want to connect. When the
+                project wraps up, the automation runs entirely on your infrastructure. You're not dependent
+                on me to keep the lights on. Think of it as hiring a contractor to build in your own shop:
+                when the job is done, what's built is yours, fully and permanently.
+              </p>
+            </div>
+            <a href="#contact" class="btn btn-primary">Automate My Business</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Managed Automation -->
+      <div class="tab-panel" id="tab-svc-managed">
+        <div class="managed-layout reveal">
+
+          <div class="managed-intro">
+            <div class="service-icon" style="background:rgba(99,102,241,.12); border-color:rgba(99,102,241,.3); margin:0 auto 20px;">🔒</div>
+            <h3>Managed Automation Hosting</h3>
+            <p>
+              AI and automation can save your business hours every week — but if you handle confidential
+              information, <em>where</em> that data lives and travels matters as much as what the tools do.
+              Managed Automation Hosting is built for businesses that can't afford to get this wrong.
+            </p>
+            <p>
+              I provision a private <strong>n8n</strong> automation server on infrastructure <strong>you own</strong>,
+              connected to AI services under enterprise terms. The result: the same productivity gains
+              you'd get from popular AI tools, with a defensible answer to the question
+              <em>"where does our client data go?"</em>
+            </p>
+          </div>
+
+          <!-- Why this matters -->
+          <div class="managed-why">
+            <h4 class="managed-section-title">Why This Matters</h4>
+            <p>
+              Most popular AI and automation tools route your data through shared servers, retain it for
+              years, or use it to train future models. For some businesses that's an inconvenience. For
+              attorneys, healthcare providers, financial advisors, HR teams, and anyone bound by
+              confidentiality obligations, it's a serious liability.
+            </p>
+            <p>
+              <strong>For attorneys specifically:</strong> a 2026 federal ruling
+              (<em>US v. Heppner</em>, S.D.N.Y.) confirmed that submitting client information to public AI
+              platforms can be treated as a third-party disclosure — meaning attorney-client privilege can
+              be waived the moment text is pasted into a free AI tool. ABA Model Rules <strong>1.1</strong> (competence),
+              <strong>1.6</strong> (confidentiality), and <strong>5.3</strong> (vendor supervision) apply to every AI tool a
+              firm uses. The architecture you choose determines whether your AI use is defensible.
+            </p>
+            <p>
+              The same principles apply to anyone with a duty of care over client information — patient
+              records, financial data, HR files, trade secrets. Convenience doesn't excuse exposure.
+            </p>
+          </div>
+
+          <!-- Three Tiers of AI Risk -->
+          <div class="ai-tiers">
+            <h4 class="managed-section-title">The Three Tiers of AI Risk</h4>
+            <div class="tier-grid">
+              <div class="tier-card tier-red">
+                <div class="tier-badge">High Risk</div>
+                <h5>Public / Consumer AI</h5>
+                <p class="tier-examples">ChatGPT Free &amp; Plus, Claude.ai Free/Pro, Gemini consumer</p>
+                <ul>
+                  <li>Data may be used to train future models</li>
+                  <li>Multi-year retention possible</li>
+                  <li>Counts as third-party disclosure</li>
+                </ul>
+                <p class="tier-verdict">Never with confidential data.</p>
+              </div>
+              <div class="tier-card tier-yellow">
+                <div class="tier-badge">Conditional</div>
+                <h5>Cloud Automation</h5>
+                <p class="tier-examples">Zapier, Make.com</p>
+                <ul>
+                  <li>Data flows through vendor servers</li>
+                  <li>SOC 2 / DPA available with paid tiers</li>
+                  <li>Vendor staff have controlled access</li>
+                </ul>
+                <p class="tier-verdict">Fine for non-privileged work — admin, intake, scheduling.</p>
+              </div>
+              <div class="tier-card tier-green">
+                <div class="tier-badge">Defensible</div>
+                <h5>Self-Hosted + API</h5>
+                <p class="tier-examples">n8n on your VPS + AI API on commercial terms</p>
+                <ul>
+                  <li>Data stays on infrastructure you control</li>
+                  <li>API calls under commercial terms — no training, short retention</li>
+                  <li>You own the logs, server, and deletion policy</li>
+                </ul>
+                <p class="tier-verdict">The architecture for confidential work.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- How it works -->
+          <div class="managed-arch">
+            <h4 class="managed-section-title">How It Works</h4>
+            <div class="arch-flow">
+              <div class="arch-step">
+                <div class="arch-icon">🏢</div>
+                <div class="arch-label">Your business</div>
+              </div>
+              <div class="arch-arrow">→</div>
+              <div class="arch-step">
+                <div class="arch-icon">🖥️</div>
+                <div class="arch-label">Your private<br>n8n server</div>
+              </div>
+              <div class="arch-arrow">→</div>
+              <div class="arch-step">
+                <div class="arch-icon">🤖</div>
+                <div class="arch-label">AI API<br>(commercial terms)</div>
+              </div>
+              <div class="arch-arrow">→</div>
+              <div class="arch-step">
+                <div class="arch-icon">📥</div>
+                <div class="arch-label">Result back<br>to your server</div>
+              </div>
+            </div>
+            <p class="arch-note">
+              A closed loop. Client data never touches a consumer AI product. The AI call is governed by
+              enterprise terms with no training and a short retention window. Logs, backups, and access
+              controls live on infrastructure that belongs to you — not a third-party platform.
+            </p>
+          </div>
+
+          <div class="managed-bottom">
+            <div class="managed-includes">
+              <h4>What's Included</h4>
+              <ul class="service-features">
+                <li>Private VPS provisioning (billed directly to you — no markup)</li>
+                <li>n8n installation, SSL certificate &amp; security hardening</li>
+                <li>Encrypted daily backups &amp; uptime monitoring</li>
+                <li>Software updates, security patches &amp; ongoing maintenance</li>
+                <li>Automation builds tailored to your workflows</li>
+                <li>Documentation you can hand to a compliance officer or auditor</li>
+              </ul>
+            </div>
+            <div class="managed-when">
+              <h4>A Good Fit When&hellip;</h4>
+              <ul class="service-features">
+                <li>You handle confidential client data — legal, medical, financial, HR</li>
+                <li>Your industry has confidentiality, privilege, or compliance obligations</li>
+                <li>You want clear documentation for clients, auditors, or regulators</li>
+                <li>You'd rather own your data than rent space on someone else's servers</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Downloads -->
+          <div class="managed-downloads">
+            <h4 class="managed-section-title">Sample Documents &amp; Templates</h4>
+            <p class="downloads-intro">
+              Free starter templates you can use to build your own internal documentation. These same
+              templates are included — fully customized to your business — with every Managed Automation
+              Hosting engagement.
+            </p>
+            <div class="downloads-grid">
+              <a href="downloads/data-processing-agreement-template.html" target="_blank" rel="noopener" class="download-card">
+                <div class="download-icon">📄</div>
+                <h5>Data Processing Agreement</h5>
+                <p>Sample DPA covering data ownership, confidentiality, retention, and breach notification.</p>
+                <span class="download-link">View Template →</span>
+              </a>
+              <a href="downloads/ai-use-policy-template.html" target="_blank" rel="noopener" class="download-card">
+                <div class="download-icon">📋</div>
+                <h5>Internal AI Use Policy</h5>
+                <p>One-page template defining which AI tools your staff may use with what kinds of data.</p>
+                <span class="download-link">View Template →</span>
+              </a>
+              <a href="downloads/attorney-engagement-letter-language.html" target="_blank" rel="noopener" class="download-card">
+                <div class="download-icon">⚖️</div>
+                <h5>Attorney Disclosure Language</h5>
+                <p>Sample engagement-letter language for attorneys disclosing AI use to clients.</p>
+                <span class="download-link">View Template →</span>
+              </a>
+            </div>
+            <p class="downloads-disclaimer">
+              These templates are provided for informational purposes only. They are not legal advice and
+              should be reviewed and adapted by qualified counsel before use.
+            </p>
+          </div>
+
+          <div style="text-align:center; margin-top:32px;">
+            <a href="#contact" class="btn btn-primary">Talk About My Setup</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PORTFOLIO
+  ============================================================ -->
+  <section id="portfolio" class="section" style="background: var(--surface);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">My Work</div>
+        <h2>Built to <span class="grad-text">Launch &amp; Last</span></h2>
+        <p>A look at the websites and automations I've built for small businesses — toggle between the two below.</p>
+      </div>
+
+      <!-- Tab buttons -->
+      <div class="portfolio-tabs reveal">
+        <button class="tab-btn active" data-tab="websites">Websites</button>
+        <button class="tab-btn" data-tab="automations">Automations</button>
+      </div>
+
+      <!-- Websites panel -->
+      <div class="tab-panel active" id="tab-websites">
+        <div class="section-header reveal" style="margin-bottom:32px;">
+          <h3 style="font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 12px;">Sites I've <span class="grad-text">Built &amp; Launched</span></h3>
+          <p>Real websites for real small businesses — each one custom-designed to help owners show up professionally online.</p>
+        </div>
+        <div class="portfolio-grid">
+          <!-- Site 1 -->
+          <div class="portfolio-card reveal">
+            <div class="portfolio-thumb" style="background-image: url('kcl.jpg'); background-size: cover; background-position: top center;">
+              <div class="thumb-overlay"></div>
+            </div>
+            <div class="portfolio-body">
+              <h3>Katy Chavez</h3>
+              <p>A bilingual website for an immigration and criminal defense attorney — available in both English and Spanish with a single click, so every client feels at home from the moment they arrive. Built to establish trust, communicate expertise, and make it effortless for clients to take the next step.</p>
+              <a href="https://www.katychavez.com" target="_blank" rel="noopener" class="portfolio-link">
+                Visit Site
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Site 2 -->
+          <div class="portfolio-card reveal">
+            <div class="portfolio-thumb" style="background-image: url('cwmtravel.jpg'); background-size: cover; background-position: top center;">
+              <div class="thumb-overlay"></div>
+            </div>
+            <div class="portfolio-body">
+              <h3>Cruising With Me Travel</h3>
+              <p>A vibrant travel agency site designed to inspire wanderlust, capture leads, and make booking inquiries effortless for vacation planners.</p>
+              <a href="https://www.cruisingwithmetravel.com" target="_blank" rel="noopener" class="portfolio-link">
+                Visit Site
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Site 3: Pac and Go Travel -->
+          <div class="portfolio-card reveal">
+            <div class="portfolio-thumb" style="background-image: url('pacandgosite.jpg'); background-size: cover; background-position: top center;">
+              <div class="thumb-overlay"></div>
+              <div class="wip-badge" style="background: rgba(6,182,212,.2); border-color: rgba(6,182,212,.4); color: var(--accent);">Demo</div>
+            </div>
+            <div class="portfolio-body">
+              <h3>Pac and Go Travel</h3>
+              <p>A full-service site for a travel agency — complete with a fully functional back-end admin panel and individual agent mini-sites, each with their own permissions.</p>
+              <a href="https://pacandgo-travel-mockup.netlify.app/" target="_blank" rel="noopener" class="portfolio-link">
+                View Demo
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Site 4 (WIP) -->
+          <div class="portfolio-card reveal">
+            <div class="portfolio-thumb" style="background-image: url('straitarrow.jpg'); background-size: cover; background-position: top center;">
+              <div class="thumb-overlay"></div>
+              <div class="wip-badge">In Progress</div>
+            </div>
+            <div class="portfolio-body">
+              <h3>Strait Arrow NC</h3>
+              <p>A site for a North Carolina general contracting business currently in development — showcasing services, past work, and making it simple for homeowners to request a quote.</p>
+              <a href="https://www.straitarrownc.com" target="_blank" rel="noopener" class="portfolio-link">
+                Preview Site
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:48px;" class="reveal">
+          <p style="color:var(--muted); margin-bottom:20px;">Ready to add your business to this list?</p>
+          <a href="#contact" class="btn btn-primary">Let's Build Your Site</a>
+        </div>
+      </div>
+
+      <!-- Automations panel -->
+      <div class="tab-panel" id="tab-automations">
+        <div class="section-header reveal" style="margin-bottom:32px;">
+          <h3 style="font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 12px;">Workflows That <span class="grad-text">Run Themselves</span></h3>
+          <p>Automations don't have to be complex to be valuable. Some handle a dozen tasks at once; others — like the office visit tracker — do one small job that quietly takes time and stress off a team's plate, so workers can focus on what matters and still get the information they need.</p>
+        </div>
+        <div class="portfolio-grid">
+
+          <!-- Automation 1: Proof Scanner -->
+          <div class="auto-card reveal">
+            <div class="auto-thumb workflow-thumb">
+              <!-- Workflow: Watch Inbox → Detect Form → AI Scan → Report + Log -->
+              <div class="wf-row">
+                <div class="wf-node">
+                  <div class="wf-icon">📧</div>
+                  <div class="wf-label">Watch Inbox</div>
+                </div>
+                <div class="wf-line"></div>
+                <div class="wf-node">
+                  <div class="wf-icon">🏷️</div>
+                  <div class="wf-label">Detect Form Type</div>
+                </div>
+                <div class="wf-line"></div>
+                <div class="wf-node">
+                  <div class="wf-icon">🤖</div>
+                  <div class="wf-label">AI Analysis</div>
+                </div>
+              </div>
+              <div class="wf-split">
+                <div class="wf-branch">
+                  <div class="wf-branch-line"></div>
+                  <div class="wf-icon-sm">📋</div>
+                  <div class="wf-label-sm">Correction Report</div>
+                </div>
+                <div class="wf-branch">
+                  <div class="wf-branch-line"></div>
+                  <div class="wf-icon-sm">📊</div>
+                  <div class="wf-label-sm">Log to Sheet</div>
+                </div>
+              </div>
+              <span class="auto-badge">Make.com + AI</span>
+            </div>
+            <div class="auto-body">
+              <h3>USCIS Form Proof Scanner</h3>
+              <p>Watches a dedicated inbox around the clock. When an email arrives with a recognized subject, the automation identifies the form type — Proof, DACA, AOS, and more — extracts the attachment, and routes it through an AI analysis engine that checks every field for errors, omissions, and missing signatures. The sender receives a detailed correction report within minutes, and every scan is automatically logged to a shared spreadsheet. Zero manual review. Nothing slips through.</p>
+              <div class="auto-tags">
+                <span class="auto-tag">Make.com</span>
+                <span class="auto-tag">AI Analysis</span>
+                <span class="auto-tag">Gmail</span>
+                <span class="auto-tag">Google Sheets</span>
+                <span class="auto-tag">USCIS Forms</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Automation 2: Telegram Office Watcher -->
+          <div class="auto-card reveal">
+            <div class="auto-thumb workflow-thumb">
+              <!-- Workflow: Watch Chat → #office Filter → Parse Details → Log + Daily Email -->
+              <div class="wf-row">
+                <div class="wf-node">
+                  <div class="wf-icon">💬</div>
+                  <div class="wf-label">Watch Chat</div>
+                </div>
+                <div class="wf-line"></div>
+                <div class="wf-node">
+                  <div class="wf-icon">🏷️</div>
+                  <div class="wf-label">#office Filter</div>
+                </div>
+                <div class="wf-line"></div>
+                <div class="wf-node">
+                  <div class="wf-icon">📝</div>
+                  <div class="wf-label">Parse Details</div>
+                </div>
+              </div>
+              <div class="wf-split">
+                <div class="wf-branch">
+                  <div class="wf-branch-line"></div>
+                  <div class="wf-icon-sm">🗄️</div>
+                  <div class="wf-label-sm">Log Visit</div>
+                </div>
+                <div class="wf-branch">
+                  <div class="wf-branch-line"></div>
+                  <div class="wf-icon-sm">📧</div>
+                  <div class="wf-label-sm">4PM Digest</div>
+                </div>
+              </div>
+              <span class="auto-badge">Make.com + Telegram</span>
+            </div>
+            <div class="auto-body">
+              <h3>Office Visit Tracker</h3>
+              <p>Monitors a Telegram group chat via webhook. When a staff member posts a message tagged with <strong>#office</strong>, the automation instantly parses the client name and any accompanying notes, then logs the visit to a live data store. At 4:00 PM every day, a scheduled scenario sweeps the store and fires a clean summary email — a complete list of everyone who walked through the door that day. Reception-level visibility, with zero reception overhead.</p>
+              <div class="auto-tags">
+                <span class="auto-tag">Make.com</span>
+                <span class="auto-tag">Telegram</span>
+                <span class="auto-tag">Webhook</span>
+                <span class="auto-tag">Data Store</span>
+                <span class="auto-tag">Scheduled Email</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Automation 3: Mail Scan & Sort -->
+          <div class="auto-card reveal">
+            <div class="auto-thumb workflow-thumb">
+              <!-- Workflow diagram: Dropbox → PDF → AI → Branch (Client / Admin) -->
+              <div class="wf-row">
+                <div class="wf-node">
+                  <div class="wf-icon">📦</div>
+                  <div class="wf-label">Dropbox Scan</div>
+                </div>
+                <div class="wf-line"></div>
+                <div class="wf-node">
+                  <div class="wf-icon">📄</div>
+                  <div class="wf-label">Extract PDF</div>
+                </div>
+                <div class="wf-line"></div>
+                <div class="wf-node">
+                  <div class="wf-icon">🤖</div>
+                  <div class="wf-label">AI Analyze</div>
+                </div>
+              </div>
+              <div class="wf-split">
+                <div class="wf-branch">
+                  <div class="wf-branch-line"></div>
+                  <div class="wf-icon-sm">🗂️</div>
+                  <div class="wf-label-sm">Client Folder</div>
+                </div>
+                <div class="wf-branch">
+                  <div class="wf-branch-line"></div>
+                  <div class="wf-icon-sm">📬</div>
+                  <div class="wf-label-sm">Admin + Daily Email</div>
+                </div>
+              </div>
+              <span class="auto-badge">Dropbox + AI</span>
+            </div>
+            <div class="auto-body">
+              <h3>Intelligent Mail Scanner</h3>
+              <p>When physical mail is scanned at a remote office and uploaded to Dropbox, the automation kicks in immediately — pulling each PDF, reading its contents, and using AI to determine whether it's client correspondence or administrative mail. Client documents are filed automatically into the correct Dropbox folder, creating a new client folder if one doesn't exist yet. Admin and personal mail is routed to a dedicated folder, and at the end of each day a digest email goes out with a summary of everything that arrived. A fully staffed mailroom, without the mailroom.</p>
+              <div class="auto-tags">
+                <span class="auto-tag">Make.com</span>
+                <span class="auto-tag">Dropbox</span>
+                <span class="auto-tag">AI Analysis</span>
+                <span class="auto-tag">PDF Processing</span>
+                <span class="auto-tag">Auto-Filing</span>
+                <span class="auto-tag">Daily Digest</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align:center; margin-top:48px;" class="reveal">
+          <p style="color:var(--muted); margin-bottom:20px;">Have a process that's eating your team's time?</p>
+          <a href="#contact" class="btn btn-primary">Let's Automate It</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHY AUTOMATION
+  ============================================================ -->
+  <section id="why-automation" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">Why Automation?</div>
+        <h2>Work Smarter, <span class="grad-text">Not Harder</span></h2>
+        <p>Running a small business means wearing a lot of hats — and too often, those hats involve repetitive, time-consuming tasks that pull you away from the work that actually grows your business.</p>
+      </div>
+
+      <p class="wa-lead reveal">
+        That's where automation platforms like <strong>Make</strong>, <strong>Zapier</strong>, and <strong>n8n</strong> come in. These tools connect the apps and services you already use and put them to work together — automatically. Here's what that looks like in the real world:
+      </p>
+
+      <div class="wa-examples reveal">
+        <div class="wa-card">
+          <div class="wa-card-icon">⚖️</div>
+          <h4>Immigration Law</h4>
+          <p>A new client submits their information online. A case file is created in your case management system. A welcome email goes out immediately. The attorney has a task waiting for them — all before anyone has touched a keyboard.</p>
+        </div>
+        <div class="wa-card">
+          <div class="wa-card-icon">🏠</div>
+          <h4>Real Estate</h4>
+          <p>New listing inquiries route to the right agent automatically. Follow-up sequences trigger based on client activity. The right documents reach the right people the moment they're needed — with zero manual intervention.</p>
+        </div>
+      </div>
+
+      <div class="wa-ai-callout reveal">
+        <div class="wa-ai-header">
+          <div class="badge">The Next Level</div>
+          <h3>Pair Automation with AI — and Your Workflows Can <span class="grad-text">Think</span></h3>
+          <p>Instead of just moving data from point A to point B, your workflows can now reason, interpret, and act on the content itself. This is where the real time savings happen.</p>
+        </div>
+        <ul class="wa-ai-list">
+          <li>
+            <span class="wa-ai-icon">📋</span>
+            <span>Review completed USCIS application packages, cross-check every field against requirements, and flag issues for attorney review — before they go out the door.</span>
+          </li>
+          <li>
+            <span class="wa-ai-icon">📬</span>
+            <span>When a USCIS notice arrives with a biometric appointment date, read the document, extract the key details, and fire a reminder text to your client automatically — so nothing falls through the cracks.</span>
+          </li>
+          <li>
+            <span class="wa-ai-icon">📧</span>
+            <span>Incoming client emails can be analyzed, categorized, and prioritized before a human even reads them — turning a flooded inbox into a managed queue.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="wa-closing reveal">
+        <p>
+          These are exactly the kinds of tasks that eat up hours of staff time every week — and exactly the kinds of tasks that automation handles better, faster, and more consistently than any manual process can.
+        </p>
+        <p class="wa-closing-kicker">
+          The best part? The same capabilities that large enterprises pay hundreds of thousands of dollars for are now accessible to any small business — at a fraction of the cost.
+        </p>
+        <a href="#contact" class="btn btn-primary" style="margin-top:12px;">Let's Talk About Your Business</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       AUTOMATIONS
+  ============================================================ -->
+  <section id="automations" class="section">
+    <div class="container">
+      <div class="auto-layout">
+        <div class="auto-content reveal">
+          <div class="badge">Automations</div>
+          <h2>Work Less.<br /><span class="grad-text">Accomplish More.</span></h2>
+          <p>
+            The average small business owner spends 20+ hours a week on tasks that could run
+            on autopilot. I design and build automation systems that handle the busywork —
+            letting you and your team focus on growing the business.
+          </p>
+
+          <div class="auto-steps">
+            <div class="auto-step">
+              <div class="step-num">1</div>
+              <div>
+                <h4>Identify the Time Drains</h4>
+                <p>We map out the repetitive tasks eating up your team's hours — data entry, follow-ups, scheduling, reporting.</p>
+              </div>
+            </div>
+            <div class="auto-step">
+              <div class="step-num">2</div>
+              <div>
+                <h4>Design the Workflow</h4>
+                <p>I build a custom automation blueprint connecting your existing tools — no ripping out what already works.</p>
+              </div>
+            </div>
+            <div class="auto-step">
+              <div class="step-num">3</div>
+              <div>
+                <h4>Launch &amp; Let It Run</h4>
+                <p>Your automation goes live and starts working around the clock — we monitor, tune, and expand as you grow.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-stack reveal">
+          <div class="tool-card">
+            <div class="tool-logo make">⚙️</div>
+            <div class="tool-info">
+              <h4>Make.com</h4>
+              <p>Visual workflow builder for complex multi-step automations — connects hundreds of apps with precision logic.</p>
+            </div>
+          </div>
+          <div class="tool-connector">connects with</div>
+          <div class="tool-card">
+            <div class="tool-logo zapier">⚡</div>
+            <div class="tool-info">
+              <h4>Zapier</h4>
+              <p>The fastest way to link your apps — 6,000+ integrations to get data moving between your favorite tools instantly.</p>
+            </div>
+          </div>
+          <div class="tool-connector">powered by</div>
+          <div class="tool-card">
+            <div class="tool-logo ai">🤖</div>
+            <div class="tool-info">
+              <h4>AI-Enhanced Processing</h4>
+              <p>Smart automation that reads, writes, categorizes, and responds — handling nuanced tasks that rules alone can't.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section id="about" class="section" style="background: var(--surface);">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-avatar reveal">
+          <div class="avatar-frame">
+            👨‍💻
+            <div class="avatar-glow"></div>
+          </div>
+        </div>
+
+        <div class="about-content reveal">
+          <div class="badge">About</div>
+          <h2>Hi, I'm Rob.</h2>
+          <p class="about-role">Founder &amp; Lead Developer — Built Smart by Rob</p>
+
+          <p>
+            My relationship with technology started in 1989 — the day I got my first computer, I took it apart and upgraded it. I've never looked back.
+          </p>
+          <p>
+            Since 1994, I've built a career spanning nearly every corner of the IT industry: technical support, network administration and engineering, application management, incident and problem management, identity and access management (IAM), and governance, assurance, and compliance. Along the way, I've always had a soft spot for small businesses — setting up servers, configuring email systems, wiring offices for Ethernet back when Wi-Fi was still science fiction, and generally making sure smaller organizations could access enterprise-grade capabilities without enterprise-grade price tags.
+          </p>
+          <p>
+            In 2025, a corporate reduction in force gave me the nudge to explore some other chapters. I ran a general contracting company for a stretch, and when shifts in the real estate market slowed that down, I leaned into another passion: travel. I became an Independent Travel Agent — because if I'm going to book my own cruises, I might as well earn a commission doing it.
+          </p>
+          <p>
+            But IT has a way of pulling you back.
+          </p>
+          <p>
+            In my last corporate role, my primary focus was writing scripts to automate the collection and analysis of data for risk assurance and compliance. I loved every minute of it. That experience got me thinking: why not bring that same focus on automation to small businesses?
+          </p>
+          <p>
+            That's what Built Smart by Rob is all about. I combine decades of real-world IT experience with modern tools that can accomplish remarkable things at a fraction of traditional costs. Whether you need a brand-new website, a redesign of an existing one, or custom automations that eliminate repetitive tasks and streamline your workflows — I can build it.
+          </p>
+          <p>
+            The goal is simple: help your business run smarter, so you can focus on what you do best.
+          </p>
+
+          <div class="about-skills">
+            <span class="skill-tag">Web Design</span>
+            <span class="skill-tag">Web Development</span>
+            <span class="skill-tag">Make.com</span>
+            <span class="skill-tag">Zapier</span>
+            <span class="skill-tag">AI Automation</span>
+            <span class="skill-tag">Process Optimization</span>
+            <span class="skill-tag">Small Business Strategy</span>
+            <span class="skill-tag">Netlify</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-info reveal">
+          <div class="badge">Get in Touch</div>
+          <h2>Let's Build Something <span class="grad-text">Smarter</span></h2>
+          <p>
+            Whether you need a new website, want to automate a headache-inducing process, or just
+            want to explore what's possible — I'd love to hear about your business. No hard sell,
+            just an honest conversation.
+          </p>
+
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="cm-icon">📧</div>
+              <span>[Email coming soon]</span>
+            </div>
+            <div class="contact-method">
+              <div class="cm-icon">📍</div>
+              <span>[Location coming soon]</span>
+            </div>
+            <div class="contact-method">
+              <div class="cm-icon">⏱️</div>
+              <span>Typical response within 24 hours</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form reveal">
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html" novalidate>
+            <input type="hidden" name="form-name" value="contact" />
+            <p style="display:none;"><input name="bot-field" /></p>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" placeholder="Jane" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" placeholder="Smith" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@mybusiness.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="business">Business Name</label>
+              <input type="text" id="business" name="business" placeholder="Smith &amp; Co." />
+            </div>
+
+            <div class="form-group">
+              <label for="service">I'm interested in…</label>
+              <select id="service" name="service">
+                <option value="">Select a service</option>
+                <option value="website">Website Design &amp; Development</option>
+                <option value="automation">Business Automations</option>
+                <option value="both">Both — Website &amp; Automations</option>
+                <option value="other">Not sure yet — let's talk</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell me about your project</label>
+              <textarea id="message" name="message" placeholder="What are you working on? What's driving you crazy that you wish could be automated?"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+              Send Message
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+            <img src="builtsmartlogo.png" alt="Built Smart by Rob" style="height:40px; width:auto;" />
+          </a>
+          <p style="margin-top:16px;">
+            Professional websites and smart automations built for small businesses that want to
+            compete smarter — not just harder.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Website Design</a></li>
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#automations">Business Automations</a></li>
+            <li><a href="#automations">Make.com Workflows</a></li>
+            <li><a href="#automations">Zapier Integrations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About Rob</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://www.katychavez.com" target="_blank" rel="noopener">Katy Chavez</a></li>
+            <li><a href="https://www.cruisingwithmetravel.com" target="_blank" rel="noopener">Cruising With Me</a></li>
+            <li><a href="https://pacandgo-travel-mockup.netlify.app/" target="_blank" rel="noopener">Pac and Go Travel</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Built Smart by Rob. All rights reserved.</p>
+        <p>Built with <span style="color:var(--accent);">&#9679;</span> for small business.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

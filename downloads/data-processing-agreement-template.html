@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Data Processing Agreement (DPA) — Template</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #1a2230;
+      background: #f5f7fa;
+      line-height: 1.65;
+      padding: 40px 20px;
+    }
+    .doc {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 60px 70px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      border-radius: 4px;
+    }
+    .doc-header {
+      border-bottom: 2px solid #1565c0;
+      padding-bottom: 18px;
+      margin-bottom: 32px;
+    }
+    .doc-header .label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: .75rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #06c4d0;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.6rem;
+      color: #0b1828;
+    }
+    .disclaimer {
+      background: #fff8e1;
+      border-left: 4px solid #f59e0b;
+      padding: 14px 18px;
+      margin-bottom: 32px;
+      font-size: .85rem;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #6b4f00;
+      line-height: 1.55;
+    }
+    h2 {
+      font-size: 1.05rem;
+      color: #0b1828;
+      margin-top: 28px;
+      margin-bottom: 10px;
+      font-family: 'Inter', system-ui, sans-serif;
+      letter-spacing: .02em;
+    }
+    p, li { font-size: .95rem; margin-bottom: 12px; }
+    ul, ol { padding-left: 22px; margin-bottom: 12px; }
+    li { margin-bottom: 6px; }
+    .placeholder {
+      color: #1565c0;
+      font-style: italic;
+      font-weight: 600;
+    }
+    .signature-block {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: .85rem;
+    }
+    .sig-line {
+      border-bottom: 1px solid #1a2230;
+      margin-top: 28px;
+      margin-bottom: 6px;
+    }
+    .footer-note {
+      margin-top: 48px;
+      padding-top: 18px;
+      border-top: 1px solid #e1e6ec;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: .78rem;
+      color: #6b7886;
+      text-align: center;
+    }
+    .footer-note a { color: #1565c0; }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .doc { box-shadow: none; padding: 40px; }
+      .disclaimer { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <div class="doc">
+    <div class="doc-header">
+      <div class="label">Sample Template</div>
+      <h1>Data Processing Agreement</h1>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Important:</strong> This is a sample template for informational purposes only.
+      It is not legal advice. Have qualified counsel review and adapt it to your jurisdiction,
+      industry, and specific arrangement before use.
+    </div>
+
+    <p>
+      This Data Processing Agreement (&ldquo;DPA&rdquo;) is entered into between
+      <span class="placeholder">[Client / Controller Name]</span>
+      (&ldquo;Controller&rdquo;) and
+      <span class="placeholder">[Service Provider / Processor Name]</span>
+      (&ldquo;Processor&rdquo;) effective as of
+      <span class="placeholder">[Effective Date]</span>.
+      It governs the processing of personal and confidential information in connection with the services
+      described in the underlying agreement between the parties (the &ldquo;Services Agreement&rdquo;).
+    </p>
+
+    <h2>1. Scope &amp; Roles</h2>
+    <p>
+      Processor will process Controller's data solely on documented instructions from Controller and only
+      to the extent necessary to perform the Services. Controller remains the data controller and retains
+      sole ownership of all Controller data.
+    </p>
+
+    <h2>2. Data Ownership</h2>
+    <p>
+      All data provided by Controller, generated on Controller's behalf, or derived from Controller's data
+      is and remains the exclusive property of Controller. Processor obtains no rights, license, or interest
+      in such data beyond what is strictly necessary to deliver the Services.
+    </p>
+
+    <h2>3. Confidentiality</h2>
+    <ul>
+      <li>Processor will treat all Controller data as strictly confidential.</li>
+      <li>Access to Controller data will be limited to personnel with a documented need to know, and only after such personnel are bound by written confidentiality obligations.</li>
+      <li>Processor will not disclose Controller data to any third party except as expressly authorized in writing by Controller or required by law.</li>
+    </ul>
+
+    <h2>4. Sub-Processors &amp; AI Services</h2>
+    <p>
+      Processor will not engage sub-processors (including third-party AI/ML services) without Controller's
+      prior written consent. Where AI services are used, Processor warrants that:
+    </p>
+    <ul>
+      <li>The service is contracted under enterprise / commercial terms (not consumer terms).</li>
+      <li>Controller data will not be used to train, fine-tune, or improve AI models.</li>
+      <li>Data retention is limited to <span class="placeholder">[30 days / specify]</span> for operational purposes only.</li>
+      <li>A Data Processing Addendum is in place between Processor and the AI provider.</li>
+    </ul>
+
+    <h2>5. Security Measures</h2>
+    <p>
+      Processor will implement and maintain appropriate technical and organizational measures, including:
+    </p>
+    <ul>
+      <li>Encryption of data in transit (TLS) and at rest.</li>
+      <li>Role-based access controls and multi-factor authentication for administrative access.</li>
+      <li>Regular security patching, vulnerability scanning, and backup procedures.</li>
+      <li>Documented incident response and breach notification procedures.</li>
+    </ul>
+
+    <h2>6. Data Retention &amp; Deletion</h2>
+    <p>
+      Controller data will be retained only for the duration necessary to provide the Services or as
+      required by law. Upon termination of the Services Agreement, or upon written request from Controller,
+      Processor will return or securely delete all Controller data within
+      <span class="placeholder">[30 / 60 / 90]</span> days and certify the deletion in writing.
+    </p>
+
+    <h2>7. Breach Notification</h2>
+    <p>
+      Processor will notify Controller without undue delay, and in any event within
+      <span class="placeholder">[24 / 48 / 72]</span> hours, of becoming aware of any actual or suspected
+      unauthorized access, disclosure, loss, or destruction of Controller data. Notice will include the
+      nature of the incident, the data affected, and the steps taken to contain and remediate it.
+    </p>
+
+    <h2>8. Audit Rights</h2>
+    <p>
+      Controller (or an independent auditor acting on its behalf) may, on reasonable notice and no more than
+      once per year, audit Processor's compliance with this DPA. Processor will provide reasonable
+      cooperation, including access to relevant records, policies, and personnel.
+    </p>
+
+    <h2>9. Liability &amp; Indemnification</h2>
+    <p>
+      Each party will be liable for damages arising from its breach of this DPA in accordance with the
+      limitations set forth in the Services Agreement. Processor will indemnify Controller against
+      third-party claims arising from Processor's failure to comply with the obligations in this DPA.
+    </p>
+
+    <h2>10. Governing Law</h2>
+    <p>
+      This DPA is governed by the laws of <span class="placeholder">[Jurisdiction]</span> without regard to
+      its conflict-of-laws principles.
+    </p>
+
+    <div class="signature-block">
+      <div>
+        <strong>Controller</strong>
+        <div class="sig-line"></div>
+        Signature
+        <div class="sig-line"></div>
+        Name &amp; Title
+        <div class="sig-line"></div>
+        Date
+      </div>
+      <div>
+        <strong>Processor</strong>
+        <div class="sig-line"></div>
+        Signature
+        <div class="sig-line"></div>
+        Name &amp; Title
+        <div class="sig-line"></div>
+        Date
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Template provided by <a href="../index.html">Build Smart by Rob</a> &middot;
+      For informational purposes only. Not legal advice.
+    </div>
+  </div>
+</body>
+</html>
