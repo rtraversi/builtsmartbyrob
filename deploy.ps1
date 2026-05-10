@@ -13,5 +13,5 @@ git push
 Write-Host ""
 Write-Host "Done! Changes pushed to GitHub." -ForegroundColor Green
 Write-Host "Netlify is deploying now - usually live in 30 seconds." -ForegroundColor Cyan
-Write-Host "https://www.builtsmartbyrob.com" -ForegroundColor Yellow
+Write-Host "https://builtsmartbyrob.netlify.app" -ForegroundColor Yellow
 Write-Host ""
