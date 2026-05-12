@@ -148,6 +148,17 @@ function showStatus(msg, type) {
   setTimeout(() => { formStatus.className = 'form-status'; }, 6000);
 }
 
+// --- Isolation tabs (nested inside a service tab — needs its own handler) ---
+document.querySelectorAll('.iso-tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const container = btn.closest('.managed-isolation');
+    container.querySelectorAll('.iso-tab-btn').forEach(b => b.classList.remove('active'));
+    container.querySelectorAll('.iso-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('isotab-' + btn.dataset.isotab).classList.add('active');
+  });
+});
+
 // --- Tabs (scoped per section so portfolio & service tabs don't clash) ---
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {

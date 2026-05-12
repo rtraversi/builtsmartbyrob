@@ -246,31 +246,60 @@
           <!-- Client isolation -->
           <div class="managed-isolation">
             <h4 class="managed-section-title">How Your Setup Stays Separate From Everyone Else's</h4>
-            <p>
-              When most automation platforms say your data is "secure," they mean it's encrypted on
-              their servers — the same servers running thousands of other businesses' workflows right
-              alongside yours. Your data and a complete stranger's data share the same underlying
-              infrastructure. That's not a flaw, it's just how shared platforms are built.
+            <p class="isolation-intro">
+              Unlike mainstream automation platforms that run every customer's data through shared
+              infrastructure, every client on Managed Automation Hosting gets their own isolated
+              environment. We offer two tiers — both are secure, the difference is how deep the
+              separation goes.
             </p>
-            <p>
-              Managed Automation Hosting is built differently. Every client gets their own
-              <strong>dedicated virtual private server</strong> — a completely separate computer in the
-              cloud, set up exclusively for your business. The automation software (n8n) is installed
-              fresh on that server and configured for you alone. No other client's data lives there.
-              No other workflows share your resources. There's no way for another business's setup
-              to see, touch, or affect yours.
-            </p>
-            <p>
-              The analogy that fits best: most platforms are like a co-working space — professionally
-              managed, but you're sharing the building with everyone else. A private VPS is your own
-              dedicated office suite. Your locks on the door. Your name on the lease. Nobody else
-              has a key.
-            </p>
-            <p>
-              That separation isn't a setting you toggle on — it's built into the architecture from
-              the start. Each client's server is provisioned independently, runs independently, and
-              is managed independently. The isolation is the point.
-            </p>
+
+            <div class="iso-tabs">
+              <button class="iso-tab-btn active" data-isotab="iso-shared">Shared</button>
+              <button class="iso-tab-btn" data-isotab="iso-dedicated">Dedicated</button>
+            </div>
+
+            <div class="iso-panel active" id="isotab-iso-shared">
+              <p>
+                On the Shared plan, your workflows run inside their own <strong>private
+                container</strong> on our managed server. Other clients have containers on the same
+                server, but each container is completely walled off — they can't see your data,
+                access your workflows, or affect how your setup runs in any way.
+              </p>
+              <p>
+                Think of it like a secure apartment building. Each unit is private — your own locked
+                door, your own space. The neighbors are in the building too, but there's no way into
+                your unit except through your own access. For most businesses, this level of
+                isolation is more than sufficient.
+              </p>
+              <ul class="service-features iso-features">
+                <li>Your own isolated container — no shared access with other clients</li>
+                <li>n8n configured and running exclusively for your business</li>
+                <li>Other clients cannot see your data, credentials, or workflows</li>
+                <li>Fully managed, monitored, and maintained on your behalf</li>
+              </ul>
+            </div>
+
+            <div class="iso-panel" id="isotab-iso-dedicated">
+              <p>
+                On the Dedicated plan, you get your own <strong>private server in the cloud</strong>
+                — a completely separate machine, set up and maintained exclusively for your business.
+                No other client's data lives on it. No other workflows run on it. At every level of
+                the stack, it belongs to you alone.
+              </p>
+              <p>
+                Think of it as the difference between a secure apartment and your own private house.
+                Both are safe — but the house is entirely separate property. No shared foundation,
+                no shared infrastructure, no neighbors in the building at all. For businesses with
+                the strictest confidentiality requirements or compliance obligations, this removes
+                any question about shared infrastructure.
+              </p>
+              <ul class="service-features iso-features">
+                <li>Your own dedicated private server — zero shared infrastructure</li>
+                <li>A separate n8n instance built and maintained exclusively for you</li>
+                <li>Complete isolation at every level, not just the application layer</li>
+                <li>Ideal for firms with strict compliance, privilege, or regulatory requirements</li>
+              </ul>
+            </div>
           </div>
 
           <!-- Three Tiers of AI Risk -->
@@ -348,7 +377,6 @@
             <div class="managed-includes">
               <h4>What's Included</h4>
               <ul class="service-features">
-                <li>Private VPS provisioning (billed directly to you — no markup)</li>
                 <li>n8n installation, SSL certificate &amp; security hardening</li>
                 <li>Encrypted daily backups &amp; uptime monitoring</li>
                 <li>Software updates, security patches &amp; ongoing maintenance</li>
