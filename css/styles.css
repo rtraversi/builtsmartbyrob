@@ -542,14 +542,48 @@ ul { list-style: none; }
   padding: 28px 32px;
   margin-bottom: 36px;
 }
-.managed-isolation p {
+.isolation-intro {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.iso-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.iso-tab-btn {
+  padding: 7px 22px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.iso-tab-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.iso-tab-btn:hover:not(.active) {
+  border-color: var(--primary-lt);
+  color: var(--text);
+}
+.iso-panel { display: none; }
+.iso-panel.active { display: block; }
+.iso-panel p {
   color: var(--muted);
   font-size: .9rem;
   line-height: 1.75;
   margin-bottom: 14px;
 }
-.managed-isolation p:last-child { margin-bottom: 0; }
-.managed-isolation strong { color: var(--white); }
+.iso-panel strong { color: var(--white); }
+.iso-features { margin-top: 16px; }
 
 /* --- Three Tiers of AI Risk --- */
 .ai-tiers { margin-bottom: 36px; }
