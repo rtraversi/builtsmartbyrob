@@ -1306,6 +1306,13 @@ ul { list-style: none; }
   background: var(--grad);
   opacity: .06;
 }
+.avatar-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 .avatar-glow {
   position: absolute;
   bottom: -2px; left: -2px; right: -2px;
