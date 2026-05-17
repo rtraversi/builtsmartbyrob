@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="What the 2026 case law actually says about AI, attorney-client privilege, and work product protection. A plain-English guide to Morgan, Warner, Heppner, and the ABA rules that govern attorney AI use." />
+  <title>AI &amp; Confidentiality | Built Smart by Rob</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ── Page-specific styles ─────────────────────────────────── */
+
+    .ailaw-hero {
+      padding: 140px 0 72px;
+    }
+    .ailaw-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      max-width: 800px;
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+    .ailaw-hero .subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 660px;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .ailaw-hero .attribution {
+      font-size: .8rem;
+      color: var(--muted);
+      opacity: .7;
+    }
+
+    /* ── Shared section wrapper ────────────────────────────────── */
+    .ailaw-section {
+      padding: 64px 0;
+      border-top: 1px solid var(--border);
+    }
+    .ailaw-section h2 {
+      font-size: clamp(1.35rem, 3vw, 1.9rem);
+      margin-bottom: 10px;
+    }
+    .ailaw-section .section-intro {
+      color: var(--muted);
+      font-size: .97rem;
+      max-width: 740px;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    /* ── Case cards ────────────────────────────────────────────── */
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+    }
+    .case-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .case-card.primary-case {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px var(--primary), var(--shadow-glow);
+    }
+    .case-label {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      width: fit-content;
+    }
+    .case-label.important { background: rgba(21,101,192,.25); color: var(--accent); }
+    .case-label.favorable { background: rgba(6,196,208,.1);   color: var(--accent-lt); }
+    .case-label.caution   { background: rgba(245,158,11,.12); color: #f59e0b; }
+    .case-card h3 {
+      font-size: 1.05rem;
+      color: var(--white);
+      margin: 0;
+    }
+    .case-cite {
+      font-size: .78rem;
+      color: var(--muted);
+    }
+    .case-holding {
+      font-size: .91rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+    .case-note {
+      margin-top: 4px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: .83rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Morgan standard ───────────────────────────────────────── */
+    .morgan-box {
+      background: var(--card);
+      border: 1px solid var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-top: 28px;
+    }
+    .morgan-box .box-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .morgan-requirements {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .morgan-req {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .morgan-req-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--grad);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .78rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .morgan-req-text {
+      font-size: .93rem;
+      line-height: 1.65;
+      color: var(--text);
+      padding-top: 3px;
+    }
+    .morgan-verdict {
+      padding: 14px 18px;
+      background: rgba(6,196,208,.07);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: .9rem;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* ── ABA Rules ─────────────────────────────────────────────── */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .rule-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+    .rule-number {
+      font-family: var(--font-head);
+      font-size: 1.55rem;
+      font-weight: 800;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+    .rule-name {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .rule-desc {
+      font-size: .87rem;
+      line-height: 1.65;
+      color: var(--text);
+    }
+    .policy-callout {
+      background: rgba(21,101,192,.1);
+      border: 1px solid rgba(21,101,192,.3);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+    }
+    .policy-callout strong { color: var(--white); }
+    .policy-callout p {
+      font-size: .9rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin: 0;
+    }
+
+    /* ── Sub-processor ─────────────────────────────────────────── */
+    .subprocessor-box {
+      background: rgba(245,158,11,.05);
+      border: 1px solid rgba(245,158,11,.22);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-top: 28px;
+    }
+    .subprocessor-box .sp-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #f59e0b;
+      margin-bottom: 12px;
+    }
+    .subprocessor-box p {
+      font-size: .91rem;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .subprocessor-box p:last-child { margin-bottom: 0; }
+    .sp-chain {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 18px 0;
+    }
+    .sp-node {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 7px 14px;
+      font-size: .82rem;
+      color: var(--text);
+    }
+    .sp-node.warn { border-color: rgba(245,158,11,.5); color: #f59e0b; }
+    .sp-arrow { color: var(--muted); font-size: .9rem; }
+
+    /* ── Defensible list ───────────────────────────────────────── */
+    .defensible-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .def-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+    }
+    .def-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .def-content { display: flex; flex-direction: column; gap: 3px; }
+    .def-title {
+      font-size: .93rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .def-detail {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── CTA ───────────────────────────────────────────────────── */
+    .ailaw-cta-section {
+      padding: 64px 0 80px;
+      border-top: 1px solid var(--border);
+    }
+    .ailaw-cta-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .ailaw-cta-box h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      margin-bottom: 14px;
+    }
+    .ailaw-cta-box p {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 28px;
+      line-height: 1.75;
+      font-size: .97rem;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Disclaimer ────────────────────────────────────────────── */
+    .legal-disclaimer {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      font-size: .78rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-top: 40px;
+    }
+
+    /* ── Footer strip ──────────────────────────────────────────── */
+    .ailaw-footer {
+      text-align: center;
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .82rem;
+    }
+    .ailaw-footer a { color: var(--accent); }
+
+    /* ── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .ailaw-hero  { padding: 110px 0 52px; }
+      .case-grid   { grid-template-columns: 1fr; }
+      .rules-grid  { grid-template-columns: 1fr 1fr; }
+      .ailaw-cta-box { padding: 32px 20px; }
+      .sp-chain    { gap: 6px; }
+    }
+    @media (max-width: 480px) {
+      .rules-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="navbar" class="scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="builtsmartlogo.png" alt="Built Smart by Rob" style="height:44px;width:auto;" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#automations">Automations</a></li>
+        <li><a href="ai-confidentiality.html" style="color:var(--accent);">AI &amp; Law</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Get Started</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html#services"    onclick="closeMobileMenu()">Services</a>
+      <a href="index.html#portfolio"   onclick="closeMobileMenu()">Portfolio</a>
+      <a href="index.html#automations" onclick="closeMobileMenu()">Automations</a>
+      <a href="ai-confidentiality.html" style="color:var(--accent);">AI &amp; Law</a>
+      <a href="index.html#about"       onclick="closeMobileMenu()">About</a>
+      <a href="index.html#contact"     onclick="closeMobileMenu()">Contact</a>
+      <a href="index.html#contact" class="btn btn-primary" onclick="closeMobileMenu()">Get Started</a>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="ailaw-hero">
+    <div class="container">
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        AI &amp; Confidentiality
+      </div>
+      <h1>What the 2026 Case Law Actually Says About AI and Attorney-Client Privilege</h1>
+      <p class="subtitle">
+        The conventional wisdom — "only use legal AI, never general AI" — turns out to be wrong as a matter of doctrine.
+        Three 2026 federal decisions clarify the real standard, and it's more workable than the CLE circuit suggests.
+        Here's what practicing attorneys actually need to know.
+      </p>
+      <p class="attribution">
+        Analysis based on: Elefant, <a href="https://www.linkedin.com/posts/carolynelefant_why-attorneys-can-use-gen-purpose-ai-for-activity-7460330559903473664-WDwS/?utm_source=share&utm_medium=member_ios&rcm=ACoAAAAyvMwBeFkP6tf6bwnJGCjKSziUyM9_SkY&fbclid=IwY2xjawR1f_1leHRuA2FlbQIxMQBzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeOLFrPDVW18Me3mD5bkXBoHYKA3Lgjze12z-UZK1hj9y7HWIamevmBkFh64c_aem_gw_OJ8NtjTPgdhcN-QGMAw" target="_blank" rel="noopener" style="color:var(--accent);"><em>Why Attorneys Can Ethically Use General-Purpose GenAI for Client Matters</em></a> (2026).
+        Not legal advice — consult qualified counsel for your jurisdiction.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 1 — THE THREE CASES
+  ============================================================ -->
+  <section class="ailaw-section">
+    <div class="container">
+      <h2>The Three 2026 Cases</h2>
+      <p class="section-intro">
+        Three federal decisions issued in early 2026 define the current judicial landscape on AI and privilege.
+        Read together, they are more favorable to attorney AI use than any single case suggests — and the
+        one most frequently cited as a warning turns out to have the narrowest application.
+      </p>
+
+      <div class="case-grid">
+
+        <!-- Morgan -->
+        <div class="case-card primary-case">
+          <span class="case-label important">Most Important</span>
+          <h3>Morgan v. V2X, Inc.</h3>
+          <div class="case-cite">No. 25-1991 &middot; D. Colo. &middot; Mar. 30, 2026</div>
+          <p class="case-holding">
+            The court held that AI tool use does <strong>not automatically waive work product protection</strong>,
+            specifically rejecting the broad categorical reasoning of <em>Heppner</em>. Judge Braswell held that
+            "AI interactions do not automatically compromise work product protections."
+          </p>
+          <p class="case-holding">
+            <em>Morgan</em> established a concrete contractual standard for AI use: no training on inputs,
+            restricted third-party disclosure, and deletion rights on demand. That standard is what
+            enterprise-tier Data Processing Agreements already provide.
+          </p>
+          <p class="case-note">
+            The Morgan standard requires <em>written documentation</em> of these protections — which is precisely
+            what a firm-level AI policy provides.
+          </p>
+        </div>
+
+        <!-- Warner -->
+        <div class="case-card">
+          <span class="case-label favorable">Favorable</span>
+          <h3>Warner v. Gilbarco, Inc.</h3>
+          <div class="case-cite">No. 2:2024-cv-12333 &middot; E.D. Mich. &middot; Feb. 2026</div>
+          <p class="case-holding">
+            The court denied a motion to compel discovery into a party's use of ChatGPT, holding that
+            AI-assisted internal analysis and drafting were <strong>protected by the work product doctrine</strong>.
+          </p>
+          <p class="case-holding">
+            Use of a general-purpose platform did <strong>not</strong> waive that protection absent
+            disclosure to an adversary. Attorney-directed AI use is work product — full stop.
+          </p>
+          <p class="case-note">
+            Combined with <em>Morgan</em>: attorney-directed AI use on a platform that meets the contractual
+            standard is fully protected.
+          </p>
+        </div>
+
+        <!-- Heppner -->
+        <div class="case-card">
+          <span class="case-label caution">Cautionary Tale</span>
+          <h3>United States v. Heppner</h3>
+          <div class="case-cite">No. 25-cr-XXX &middot; S.D.N.Y. &middot; Feb. 2026</div>
+          <p class="case-holding">
+            An <strong>unrepresented litigant</strong> using a <strong>consumer-grade Claude account</strong>
+            — which permitted training and third-party disclosure — lost both privilege and work product protection.
+          </p>
+          <p class="case-holding">
+            Its applicability to attorneys using enterprise AI is marginal. The court's ruling turned on the
+            absence of any contractual confidentiality protections, not on AI use itself.
+          </p>
+          <p class="case-note">
+            <em>Morgan</em> explicitly declined to adopt Heppner's broad categorical reasoning. Heppner is a
+            cautionary tale about consumer accounts — not a rule about professional practice.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 2 — THE MORGAN STANDARD
+  ============================================================ -->
+  <section class="ailaw-section">
+    <div class="container">
+      <h2>What the Morgan Standard Actually Requires</h2>
+      <p class="section-intro">
+        <em>Morgan</em> didn't just rule in favor of AI use — it defined the specific contractual terms
+        that make AI use defensible. These three requirements determine whether your AI use is protected.
+      </p>
+
+      <div class="morgan-box">
+        <div class="box-label">The Morgan Contractual Standard</div>
+        <div class="morgan-requirements">
+          <div class="morgan-req">
+            <div class="morgan-req-num">1</div>
+            <div class="morgan-req-text">
+              The provider contractually <strong>prohibits storing or using your inputs to train or improve its model</strong>.
+              This must be a contractual commitment, not a toggle or a default that can change.
+            </div>
+          </div>
+          <div class="morgan-req">
+            <div class="morgan-req-num">2</div>
+            <div class="morgan-req-text">
+              The provider contractually <strong>restricts disclosure of your inputs to third parties</strong>
+              except as strictly essential to delivering the service — with no unrestricted access.
+            </div>
+          </div>
+          <div class="morgan-req">
+            <div class="morgan-req-num">3</div>
+            <div class="morgan-req-text">
+              The provider contractually <strong>affords deletion rights</strong> — you can require that
+              all confidential information be deleted on demand.
+            </div>
+          </div>
+        </div>
+        <div class="morgan-verdict">
+          <strong>What satisfies this standard:</strong> Enterprise-tier Data Processing Agreements from major
+          platforms (ChatGPT Business/Enterprise, Claude Teams/Enterprise, Gemini Workspace, Perplexity Enterprise
+          Pro) contractually provide all three. <strong>What does not:</strong> Consumer accounts — even paid
+          ones — which typically lack enforceable contractual commitments on these terms.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 3 — ABA MODEL RULES
+  ============================================================ -->
+  <section class="ailaw-section">
+    <div class="container">
+      <h2>The ABA Model Rules in Play</h2>
+      <p class="section-intro">
+        Three Model Rules govern attorney AI use. None of them require perfect security or prohibit AI
+        outright — they require <em>reasonable efforts</em> and documented professional judgment.
+      </p>
+
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-number">1.6</div>
+          <div class="rule-name">Confidentiality</div>
+          <p class="rule-desc">
+            Requires "reasonable efforts" to prevent unauthorized disclosure — not the most secure technology
+            available, not elimination of all risk. ABA Formal Opinion 477R's five-factor test defines
+            reasonable efforts: sensitivity of the matter, likelihood of compromise, cost of safeguards,
+            difficulty of implementation, and impact on representation.
+          </p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-number">1.1</div>
+          <div class="rule-name">Competence</div>
+          <p class="rule-desc">
+            Requires attorneys to understand the benefits and risks of relevant technology. You don't need
+            to be a technologist, but you do need to understand what tier of AI you're using, what your
+            DPA actually says, and what protections are and aren't in place for your clients.
+          </p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-number">5.3</div>
+          <div class="rule-name">Vendor Supervision</div>
+          <p class="rule-desc">
+            Requires attorneys to supervise non-lawyer staff and vendors — including AI tools — to ensure
+            conduct compatible with the attorney's professional obligations. Staff can use AI tools under
+            attorney direction; the attorney remains responsible for directing the work and reviewing outputs.
+          </p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-number">1.4</div>
+          <div class="rule-name">Communication</div>
+          <p class="rule-desc">
+            Governs the duty to keep clients informed. ABA Formal Opinion 512 imposed specific AI consent
+            requirements — but notably, no disciplinary decision in fifteen years of cloud computing
+            enforcement has turned on failure to disclose routine technology choices to clients.
+          </p>
+        </div>
+      </div>
+
+      <div class="policy-callout">
+        <p>
+          <strong>The paper trail matters.</strong> Rule 1.6 doesn't require the most secure option —
+          it requires evidence that you made a reasoned choice. A written AI policy is how you preserve
+          that evidence. Without one, "reasonable efforts" is a post-hoc rationalization in front of a
+          disciplinary panel. With one, it's a contemporaneous record of the platforms you evaluated,
+          why you approved them, and the conditions under which they may be used.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 4 — THE SUBPROCESSOR FACTOR
+  ============================================================ -->
+  <section class="ailaw-section">
+    <div class="container">
+      <h2>The Sub-processor Factor: A Risk Most Guidance Ignores</h2>
+      <p class="section-intro">
+        Purpose-built "legal AI" products are often marketed on the strength of their confidentiality
+        protections. But most of them are wrappers around general-purpose foundational models — which
+        means client data travels through more contractual relationships, not fewer.
+      </p>
+
+      <div class="subprocessor-box">
+        <div class="sp-label">How Legal AI Wrappers Actually Work</div>
+        <p>
+          Harvey AI routes through OpenAI (Azure), Anthropic (AWS Bedrock), and Google (Vertex AI).
+          LexisNexis Protégé uses a "Best Fit" auto-routing system that selects in real time from
+          five separate providers — OpenAI, Anthropic, Mistral, Google, and Microsoft — meaning you
+          may not know which provider processes any given document.
+        </p>
+
+        <div class="sp-chain">
+          <div class="sp-node">Your firm</div>
+          <div class="sp-arrow">→</div>
+          <div class="sp-node">Legal AI vendor<br><small style="color:var(--muted);">(Contract A — DPA)</small></div>
+          <div class="sp-arrow">→</div>
+          <div class="sp-node warn">Foundational model provider(s)<br><small>(Contract B — subprocessor)</small></div>
+          <div class="sp-arrow">→</div>
+          <div class="sp-node warn" style="font-size:.78rem;">Your firm has no direct<br>contract here</div>
+        </div>
+
+        <p>
+          When you use ChatGPT Business or Claude Teams directly, the foundational model provider
+          and your contracting party are the same entity — your DPA covers the full data path.
+          With a legal AI wrapper, your DPA is with the vendor, and the vendor's subprocessor
+          agreements with the foundational model providers are what govern how your client data
+          is actually handled at the point of inference.
+        </p>
+        <p>
+          <em>Morgan</em>'s protective order specifically requires that subprocessors be "bound by
+          obligations no less protective" than the order itself — meaning flow-down protections must
+          be verified, not assumed. California's State Bar guidance lists sub-processor identification
+          as a mandatory element of AI due diligence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 5 — WHAT DEFENSIBLE LOOKS LIKE
+  ============================================================ -->
+  <section class="ailaw-section">
+    <div class="container">
+      <h2>What Defensible AI Use Looks Like in Practice</h2>
+      <p class="section-intro">
+        The <em>Morgan</em> and <em>Warner</em> decisions together define a workable standard.
+        Meeting it doesn't require expensive purpose-built legal AI — it requires the right
+        account tier, the right contractual terms, and documented professional judgment.
+      </p>
+
+      <div class="defensible-list">
+
+        <div class="def-item">
+          <div class="def-icon">📋</div>
+          <div class="def-content">
+            <div class="def-title">Enterprise or business account with a DPA in place</div>
+            <div class="def-detail">
+              Consumer accounts — even paid ones — generally lack the contractual training prohibitions,
+              restricted human review, and deletion rights that the Morgan standard requires.
+              The tier distinction is the entire analysis.
+            </div>
+          </div>
+        </div>
+
+        <div class="def-item">
+          <div class="def-icon">🚫</div>
+          <div class="def-content">
+            <div class="def-title">No training on inputs — contractually, not just as a setting</div>
+            <div class="def-detail">
+              A toggle that turns off training is not the same as a contractual prohibition.
+              Your DPA should explicitly state that the provider will not use customer content
+              to develop or improve its services.
+            </div>
+          </div>
+        </div>
+
+        <div class="def-item">
+          <div class="def-icon">👨‍⚖️</div>
+          <div class="def-content">
+            <div class="def-title">Attorney directs the work; staff may operate under that direction</div>
+            <div class="def-detail">
+              Work product protection derives from attorney direction, not from who types the prompt.
+              Paralegals and legal assistants can use AI tools — but the attorney must direct what
+              the AI is used for, and review outputs before they affect any substantive decision
+              or leave the firm. Rule 5.3 makes the supervising attorney responsible throughout.
+            </div>
+          </div>
+        </div>
+
+        <div class="def-item">
+          <div class="def-icon">🔍</div>
+          <div class="def-content">
+            <div class="def-title">Attorney reviews all outputs before they go anywhere</div>
+            <div class="def-detail">
+              Both <em>Morgan</em> and <em>Warner</em> presuppose attorney supervision. The work product
+              doctrine protects the attorney's mental impressions and judgment — not the tool's output.
+              AI assists; attorneys decide.
+            </div>
+          </div>
+        </div>
+
+        <div class="def-item">
+          <div class="def-icon">📝</div>
+          <div class="def-content">
+            <div class="def-title">Written AI policy documenting the firm's analysis</div>
+            <div class="def-detail">
+              The policy is your contemporaneous record of which platforms you evaluated, why you
+              approved them, and the conditions for use. Without it, you cannot demonstrate the
+              "reasonable efforts" that Rule 1.6 requires.
+            </div>
+          </div>
+        </div>
+
+        <div class="def-item">
+          <div class="def-icon">🏗️</div>
+          <div class="def-content">
+            <div class="def-title">Self-hosted or isolated infrastructure for the most sensitive work</div>
+            <div class="def-detail">
+              For matters where "defensible" isn't sufficient and "verifiable" is the standard —
+              a self-hosted automation environment with direct API calls gives you complete control
+              over where data travels, eliminates sub-processor ambiguity, and gives you a clear
+              answer to "where does our client data go?"
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="legal-disclaimer">
+        <strong>Note:</strong> This page provides a plain-English summary of publicly available case law and
+        ethics guidance for informational purposes only. It is not legal advice and is not a substitute for
+        review by qualified counsel familiar with your jurisdiction's Rules of Professional Conduct. Case law
+        and bar guidance in this area is evolving rapidly — verify current authority before relying on any
+        specific ruling or opinion cited here.
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA
+  ============================================================ -->
+  <section class="ailaw-cta-section">
+    <div class="container">
+      <div class="ailaw-cta-box">
+        <div class="badge" style="display:inline-flex;margin-bottom:18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          For Practices That Can't Afford to Get This Wrong
+        </div>
+        <h2>Managed Automation Hosting</h2>
+        <p>
+          A self-hosted n8n environment with direct API connections gives you complete data isolation,
+          no sub-processor ambiguity, and a clear audit trail — the architecture the Morgan standard
+          was written to protect.
+        </p>
+        <div class="cta-buttons">
+          <a href="index.html#services" class="btn btn-primary">See How It Works</a>
+          <a href="index.html#contact"  class="btn btn-outline">Talk to Rob</a>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;text-align:center;">
+        <p style="color:var(--muted);font-size:.85rem;margin-bottom:16px;">Free templates for your practice</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="downloads/ai-use-policy-template.html" class="btn btn-outline" style="font-size:.85rem;padding:10px 20px;">AI Use Policy Template</a>
+          <a href="downloads/attorney-engagement-letter-language.html" class="btn btn-outline" style="font-size:.85rem;padding:10px 20px;">Engagement Letter Language</a>
+          <a href="downloads/data-processing-agreement-template.html" class="btn btn-outline" style="font-size:.85rem;padding:10px 20px;">Data Processing Agreement</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="ailaw-footer">
+    <div class="container">
+      <p><a href="index.html">← Built Smart by Rob</a> &nbsp;|&nbsp; &copy; 2026 Built Smart by Rob. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    // Navbar scroll behavior
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+  </script>
+
+</body>
+</html>
