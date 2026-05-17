@@ -16,16 +16,6 @@
 <body>
 
   <!-- ============================================================
-       SPLASH SCREEN
-  ============================================================ -->
-  <div id="splash-screen">
-    <video id="splash-video" autoplay muted playsinline>
-      <source src="bsbr_automationlogo.mp4" type="video/mp4" />
-    </video>
-    <button id="splash-skip">Skip &rarr;</button>
-  </div>
-
-  <!-- ============================================================
        NAVIGATION
   ============================================================ -->
   <nav id="navbar">
@@ -203,17 +193,18 @@
       <div class="section-header reveal">
         <div class="badge">What I Do</div>
         <h2>How I Help Your <span class="grad-text">Business Grow</span></h2>
-        <p>From a website that works around the clock to automations that eliminate busywork — and the infrastructure to run it all at scale.</p>
+        <p>Smart automations eliminate the repetitive tasks that eat up your team's time — from lead follow-ups and data entry to document processing and AI-powered workflows that handle work no one should have to do by hand. For businesses with confidentiality obligations, private managed infrastructure keeps your data exactly where it belongs: under your control.</p>
+        <p>And when you need a professional online presence to match, I build fast, modern websites tailored to your brand — designed to make a strong first impression and turn visitors into clients.</p>
       </div>
 
       <div class="portfolio-tabs reveal">
-        <button class="tab-btn active" data-tab="svc-web">Websites</button>
+        <button class="tab-btn active" data-tab="svc-managed">Managed Automation</button>
         <button class="tab-btn" data-tab="svc-make">Make / Zapier</button>
-        <button class="tab-btn" data-tab="svc-managed">Managed Automation</button>
+        <button class="tab-btn" data-tab="svc-web">Websites</button>
       </div>
 
       <!-- Websites -->
-      <div class="tab-panel active" id="tab-svc-web">
+      <div class="tab-panel" id="tab-svc-web">
         <div class="svc-single">
           <div class="service-card reveal">
             <div class="service-icon">🌐</div>
@@ -270,7 +261,7 @@
       </div>
 
       <!-- Managed Automation -->
-      <div class="tab-panel" id="tab-svc-managed">
+      <div class="tab-panel active" id="tab-svc-managed">
         <div class="managed-layout reveal">
 
           <div class="managed-intro">
@@ -615,6 +606,9 @@
         <div class="section-header reveal" style="margin-bottom:32px;">
           <h3 style="font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 12px;">Workflows That <span class="grad-text">Run Themselves</span></h3>
           <p>Automations don't have to be complex to be valuable. Some handle a dozen tasks at once; others — like the office visit tracker — do one small job that quietly takes time and stress off a team's plate, so workers can focus on what matters and still get the information they need.</p>
+          <p style="margin-top:16px; font-size:.9rem; color:var(--muted);">
+            The examples below are <strong style="color:var(--text);">deployed, real-world automations</strong> currently running for clients — not demos or mockups. They represent a fraction of what's possible. New examples are added regularly as we build, and the range of problems automation can solve is far broader than what you see here. If you have a process in mind, <a href="#contact">let's talk about it</a>.
+          </p>
         </div>
         <div class="portfolio-grid">
 
@@ -756,6 +750,54 @@
                 <span class="auto-tag">PDF Processing</span>
                 <span class="auto-tag">Auto-Filing</span>
                 <span class="auto-tag">Daily Digest</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Automation 4: Smart Form Filler (In Development) -->
+          <div class="auto-card reveal">
+            <div class="auto-thumb workflow-thumb">
+              <!-- Workflow: Upload Doc → AI Extract → Contact Card → Edit/Review → Populate Forms -->
+              <div class="wf-row">
+                <div class="wf-node">
+                  <div class="wf-icon">📄</div>
+                  <div class="wf-label">Upload Document</div>
+                </div>
+                <div class="wf-line"></div>
+                <div class="wf-node">
+                  <div class="wf-icon">🤖</div>
+                  <div class="wf-label">AI Extract Info</div>
+                </div>
+                <div class="wf-line"></div>
+                <div class="wf-node">
+                  <div class="wf-icon">🪪</div>
+                  <div class="wf-label">Contact Card</div>
+                </div>
+              </div>
+              <div class="wf-split">
+                <div class="wf-branch">
+                  <div class="wf-branch-line"></div>
+                  <div class="wf-icon-sm">✏️</div>
+                  <div class="wf-label-sm">Review &amp; Edit</div>
+                </div>
+                <div class="wf-branch">
+                  <div class="wf-branch-line"></div>
+                  <div class="wf-icon-sm">📋</div>
+                  <div class="wf-label-sm">Populate Forms</div>
+                </div>
+              </div>
+              <span class="auto-badge" style="background:rgba(99,102,241,.25); border-color:rgba(99,102,241,.5); color:#a5b4fc;">n8n + AI</span>
+            </div>
+            <div class="auto-body">
+              <div class="wip-badge" style="position:relative; display:inline-block; margin-bottom:10px; background:rgba(99,102,241,.15); border:1px solid rgba(99,102,241,.35); color:#a5b4fc; font-size:.7rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; padding:3px 10px; border-radius:100px;">In Development</div>
+              <h3>Smart Document Form Filler</h3>
+              <p>Staff upload a client document — an ID, a prior filing, any paperwork with client details — and the app reads it automatically, pulling out every piece of relevant information and building a structured contact card on the spot. The contact card is fully editable: staff can review the extracted data, correct anything that's off, and fill in anything the document didn't contain. Once the card is confirmed, that information is used to populate whatever forms are needed — no re-typing, no copy-and-paste, no transcription errors. The same client data, flowing cleanly into any form, every time.</p>
+              <div class="auto-tags">
+                <span class="auto-tag">n8n</span>
+                <span class="auto-tag">AI Extraction</span>
+                <span class="auto-tag">Document Upload</span>
+                <span class="auto-tag">Contact Card</span>
+                <span class="auto-tag">Form Population</span>
               </div>
             </div>
           </div>
@@ -966,9 +1008,10 @@
           <div class="badge">Get in Touch</div>
           <h2>Let's Build Something <span class="grad-text">Smarter</span></h2>
           <p>
-            Whether you need a new website, want to automate a headache-inducing process, or just
-            want to explore what's possible — I'd love to hear about your business. No hard sell,
-            just an honest conversation.
+            Whether you have a process that's eating your team's time, need a private automation
+            infrastructure your business can actually trust, or want a professional website that
+            works as hard as you do — I'd love to hear about it. No hard sell, just an honest
+            conversation about what would actually help.
           </p>
 
           <div class="contact-methods">
