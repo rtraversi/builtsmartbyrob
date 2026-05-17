@@ -2,47 +2,6 @@
    Built Smart by Rob — Stylesheet
    ============================================================ */
 
-/* ============================================================
-   SPLASH SCREEN
-   ============================================================ */
-#splash-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.8s ease;
-}
-#splash-screen.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-#splash-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-#splash-skip {
-  position: absolute;
-  bottom: 32px;
-  right: 32px;
-  background: rgba(255, 255, 255, .12);
-  border: 1px solid rgba(255, 255, 255, .25);
-  color: rgba(255, 255, 255, .75);
-  padding: 8px 22px;
-  border-radius: 100px;
-  cursor: pointer;
-  font-family: var(--font-body);
-  font-size: .85rem;
-  letter-spacing: .04em;
-  transition: background .2s ease, color .2s ease;
-}
-#splash-skip:hover {
-  background: rgba(255, 255, 255, .22);
-  color: #fff;
-}
 
 /* --- Reset & Base ----------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

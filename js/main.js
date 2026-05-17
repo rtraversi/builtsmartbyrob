@@ -2,30 +2,6 @@
    Built Smart by Rob — Main JS
    ============================================================ */
 
-// --- Splash screen -----------------------------------------
-(function () {
-  const splash = document.getElementById('splash-screen');
-  const video  = document.getElementById('splash-video');
-  const skip   = document.getElementById('splash-skip');
-  if (!splash || !video) return;
-
-  document.body.style.overflow = 'hidden';
-
-  function dismiss() {
-    splash.classList.add('fade-out');
-    setTimeout(() => {
-      splash.remove();
-      document.body.style.overflow = '';
-    }, 800);
-  }
-
-  video.addEventListener('ended', dismiss);
-  skip.addEventListener('click', dismiss);
-
-  // Safety valve: if autoplay is blocked or video errors, clear after 6s
-  video.addEventListener('error', dismiss);
-  setTimeout(dismiss, 6000);
-}());
 
 // --- Copyright year ----------------------------------------
 document.getElementById('year').textContent = new Date().getFullYear();
