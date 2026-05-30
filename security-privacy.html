@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How Built Smart by Rob protects your data — per-client isolation, no AI training on your data, encryption, and your choice of managed or fully self-hosted infrastructure. Plain-English security for businesses that handle confidential information." />
+  <title>Security &amp; Privacy | Built Smart by Rob</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://builtsmartbyrob.com/security-privacy.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:title"       content="Security & Privacy | Built Smart by Rob" />
+  <meta property="og:description" content="Per-client isolation, no AI training on your data, encryption end to end, and your choice of managed or fully self-hosted infrastructure." />
+  <meta property="og:url"         content="https://builtsmartbyrob.com/security-privacy.html" />
+  <meta property="og:site_name"   content="Built Smart by Rob" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:title"       content="Security & Privacy | Built Smart by Rob" />
+  <meta name="twitter:description" content="How your data is protected — isolation, no AI training, encryption, and managed or self-hosted infrastructure." />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Security & Privacy",
+    "description": "How Built Smart by Rob protects client data across websites, automations, and client portals.",
+    "url": "https://builtsmartbyrob.com/security-privacy.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Built Smart by Rob",
+      "url": "https://builtsmartbyrob.com"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ── Page-specific styles ─────────────────────────────────── */
+
+    .sec-hero { padding: 140px 0 64px; }
+    .sec-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      max-width: 820px;
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+    .sec-hero .subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 680px;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .sec-hero .attribution { font-size: .82rem; color: var(--muted); opacity: .8; }
+    .sec-hero .attribution a { font-weight: 600; }
+
+    /* ── Section wrapper ───────────────────────────────────────── */
+    .sec-section { padding: 60px 0; border-top: 1px solid var(--border); }
+    .sec-section h2 { font-size: clamp(1.35rem, 3vw, 1.9rem); margin-bottom: 10px; }
+    .sec-section .section-intro {
+      color: var(--muted);
+      font-size: .97rem;
+      max-width: 760px;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    /* ── Lead principle (isolation) ────────────────────────────── */
+    .iso-feature {
+      background: var(--card);
+      border: 1px solid var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-glow);
+    }
+    .iso-feature .iso-head {
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+    }
+    .iso-feature p { font-size: .95rem; line-height: 1.75; color: var(--text); margin-bottom: 14px; }
+    .iso-feature p:last-child { margin-bottom: 0; }
+    .iso-chain {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 22px 0 6px;
+    }
+    .iso-node {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 9px 15px; font-size: .82rem; color: var(--text);
+    }
+    .iso-node strong { color: var(--white); }
+    .iso-x { color: var(--muted); font-size: 1rem; font-weight: 700; }
+
+    /* ── Two delivery models ───────────────────────────────────── */
+    .model-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
+    }
+    .model-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px; display: flex; flex-direction: column; gap: 12px;
+    }
+    .model-card.featured { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); }
+    .model-tag {
+      display: inline-block; width: fit-content; font-size: .68rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; padding: 4px 11px; border-radius: 100px;
+      background: rgba(21,101,192,.22); color: var(--accent);
+    }
+    .model-tag.alt { background: rgba(6,196,208,.12); color: var(--accent-lt); }
+    .model-card h3 { font-size: 1.15rem; color: var(--white); margin: 0; }
+    .model-card > p { font-size: .9rem; line-height: 1.7; color: var(--text); margin: 0; }
+    .model-card ul { display: flex; flex-direction: column; gap: 9px; margin-top: 4px; }
+    .model-card li { font-size: .86rem; line-height: 1.55; color: var(--muted); padding-left: 24px; position: relative; }
+    .model-card li::before {
+      content: '✓'; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700;
+    }
+    .model-best { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); font-size: .85rem; color: var(--text); }
+    .model-best strong { color: var(--white); }
+
+    /* ── Three tiers ───────────────────────────────────────────── */
+    .stier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .stier {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .stier.red    { border-color: rgba(239,68,68,.4); }
+    .stier.yellow { border-color: rgba(245,158,11,.4); }
+    .stier.green  { border-color: rgba(6,196,208,.5); box-shadow: var(--shadow-glow); }
+    .stier-badge {
+      width: fit-content; font-size: .67rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; padding: 4px 11px; border-radius: 100px;
+    }
+    .stier.red    .stier-badge { background: rgba(239,68,68,.15);  color: #f87171; }
+    .stier.yellow .stier-badge { background: rgba(245,158,11,.14); color: #f59e0b; }
+    .stier.green  .stier-badge { background: rgba(6,196,208,.14);  color: var(--accent); }
+    .stier h3 { font-size: 1.02rem; color: var(--white); margin: 2px 0 0; }
+    .stier .ex { font-size: .8rem; color: var(--muted); font-style: italic; }
+    .stier ul { display: flex; flex-direction: column; gap: 6px; margin: 6px 0; }
+    .stier li { font-size: .85rem; line-height: 1.5; color: var(--text); padding-left: 18px; position: relative; }
+    .stier li::before { content: '•'; position: absolute; left: 4px; color: var(--muted); }
+    .stier .verdict { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); font-size: .85rem; font-weight: 600; }
+    .stier.red    .verdict { color: #f87171; }
+    .stier.yellow .verdict { color: #f59e0b; }
+    .stier.green  .verdict { color: var(--accent); }
+
+    /* ── Build vs Run ──────────────────────────────────────────── */
+    .br-box {
+      background: rgba(6,196,208,.05); border: 1px solid rgba(6,196,208,.22);
+      border-radius: var(--radius-lg); padding: 28px;
+    }
+    .br-box p { font-size: .92rem; line-height: 1.75; color: var(--text); margin-bottom: 14px; }
+    .br-row { display: flex; gap: 16px; align-items: flex-start; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin-top: 12px; }
+    .br-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+    .br-title { font-size: .93rem; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+    .br-detail { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+    .br-chain { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 22px 0 4px; }
+    .br-node { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 16px; font-size: .84rem; color: var(--text); }
+    .br-node small { display: block; color: var(--muted); font-size: .72rem; margin-top: 2px; }
+    .br-neq { color: var(--accent); font-size: 1.1rem; font-weight: 700; }
+
+    /* ── Protection checklist ──────────────────────────────────── */
+    .prot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+    .prot-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+    .prot-icon { font-size: 1.4rem; margin-bottom: 10px; }
+    .prot-card h4 { font-size: .98rem; color: var(--white); margin-bottom: 6px; }
+    .prot-card p { font-size: .85rem; line-height: 1.6; color: var(--muted); }
+
+    /* ── Straight answers ──────────────────────────────────────── */
+    .qa { display: flex; flex-direction: column; gap: 14px; }
+    .qa-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; }
+    .qa-q { font-size: .95rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+    .qa-a { font-size: .88rem; line-height: 1.7; color: var(--text); }
+    .qa-a strong { color: var(--accent); }
+
+    /* ── CTA ───────────────────────────────────────────────────── */
+    .sec-cta { padding: 60px 0 80px; border-top: 1px solid var(--border); }
+    .sec-cta-box { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 48px; text-align: center; }
+    .sec-cta-box h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 14px; }
+    .sec-cta-box p { color: var(--muted); max-width: 540px; margin: 0 auto 28px; line-height: 1.75; font-size: .97rem; }
+    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    .legal-note {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 16px 20px; font-size: .78rem; color: var(--muted); line-height: 1.65; margin-top: 36px;
+    }
+
+    .sec-footer { text-align: center; padding: 32px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: .82rem; }
+    .sec-footer a { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .sec-hero { padding: 110px 0 48px; }
+      .br-chain, .iso-chain { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="navbar" class="scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="builtsmartlogo.png" alt="Built Smart by Rob" style="height:44px;width:auto;" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#automations">Automations</a></li>
+        <li><a href="ai-confidentiality.html">AI &amp; Law</a></li>
+        <li><a href="security-privacy.html" style="color:var(--accent);">Security</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Get Started</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html#services"    onclick="closeMobileMenu()">Services</a>
+      <a href="index.html#portfolio"   onclick="closeMobileMenu()">Portfolio</a>
+      <a href="index.html#automations" onclick="closeMobileMenu()">Automations</a>
+      <a href="ai-confidentiality.html">AI &amp; Law</a>
+      <a href="security-privacy.html" style="color:var(--accent);">Security</a>
+      <a href="index.html#about"       onclick="closeMobileMenu()">About</a>
+      <a href="index.html#contact"     onclick="closeMobileMenu()">Contact</a>
+      <a href="index.html#contact" class="btn btn-primary" onclick="closeMobileMenu()">Get Started</a>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="sec-hero">
+    <div class="container">
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Security &amp; Privacy
+      </div>
+      <h1>Your Clients' Data, Protected by Design</h1>
+      <p class="subtitle">
+        I build websites, automations, and client portals for businesses that can't afford a data
+        problem — law firms, medical practices, financial advisors, HR teams. Security isn't a feature
+        bolted on at the end; it's the architecture everything is built on. Here's exactly how your
+        information is protected — in plain English, no jargon.
+      </p>
+      <p class="attribution">
+        Looking for the legal side — privilege, work product, and the 2026 case law?
+        <a href="ai-confidentiality.html">Read the AI &amp; Law analysis →</a>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 1 — ISOLATION
+  ============================================================ -->
+  <section class="sec-section">
+    <div class="container">
+      <h2>The One Thing That Matters Most: Isolation</h2>
+      <p class="section-intro">
+        Most popular software runs every customer through one big shared system. Your data sits in the
+        same database as thousands of strangers, separated only by a software setting. We don't do that.
+        Every client gets their <em>own</em> isolated stack — their own database, their own application,
+        their own AI key. Your information never shares a home with another business's.
+      </p>
+
+      <div class="iso-feature">
+        <div class="iso-head">What "Your Own Stack" Actually Means</div>
+        <p>
+          When I build for you, your system is provisioned as a self-contained environment. There is no
+          shared, multi-tenant database where a single bug or misconfiguration could spill one firm's
+          files into another's view. The separation is structural, not just a permission checkbox.
+        </p>
+        <div class="iso-chain">
+          <div class="iso-node"><strong>Your database</strong></div>
+          <div class="iso-x">·</div>
+          <div class="iso-node"><strong>Your application</strong></div>
+          <div class="iso-x">·</div>
+          <div class="iso-node"><strong>Your AI key</strong></div>
+          <div class="iso-x">·</div>
+          <div class="iso-node"><strong>Your private code repository</strong></div>
+        </div>
+        <p style="margin-top:18px;">
+          It's the difference between a safe-deposit box that's yours alone and a shared filing cabinet
+          the whole building can open. For a business with confidentiality obligations, that distinction
+          is the entire ballgame.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 2 — MANAGED VS SELF-HOSTED
+  ============================================================ -->
+  <section class="sec-section">
+    <div class="container">
+      <h2>Two Ways to Run It — Both Secure</h2>
+      <p class="section-intro">
+        Every client is isolated. The choice is <em>whose</em> infrastructure that isolated environment
+        lives on. Both options are built to the same security standard; the difference is how much you
+        want to own directly.
+      </p>
+
+      <div class="model-grid">
+
+        <div class="model-card featured">
+          <span class="model-tag">Most Popular</span>
+          <h3>Managed Hosting</h3>
+          <p>
+            Your system runs on professionally managed, enterprise-grade infrastructure that I set up,
+            monitor, secure, and maintain for you — for a simple monthly fee. You get full isolation and
+            enterprise data terms without having to run anything yourself.
+          </p>
+          <ul>
+            <li>Your own isolated database, app, and AI key</li>
+            <li>Fully managed — updates, monitoring, backups, security patches handled</li>
+            <li>Built on audited, reputable cloud providers</li>
+            <li>No servers for you to babysit, patch, or worry about</li>
+          </ul>
+          <div class="model-best"><strong>Best for:</strong> most firms who want enterprise-grade security without becoming their own IT department.</div>
+        </div>
+
+        <div class="model-card">
+          <span class="model-tag alt">Maximum Control</span>
+          <h3>Self-Hosted</h3>
+          <p>
+            Prefer to own every piece? The entire system can be built on <em>your</em> accounts — your
+            database, your hosting, your AI key — so your data never touches my infrastructure at all.
+            You hold every credential.
+          </p>
+          <ul>
+            <li>Every account and key belongs to you, end to end</li>
+            <li>Your data lives only on infrastructure you control</li>
+            <li>No third-party hosting relationship to vet — there isn't one</li>
+            <li>I can build on managed infrastructure, then hand the whole thing over to your accounts</li>
+          </ul>
+          <div class="model-best"><strong>Best for:</strong> the strictest compliance, privilege, or regulatory requirements where "we own it outright" is the standard.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 3 — THREE TIERS OF AI RISK (refreshed)
+  ============================================================ -->
+  <section class="sec-section">
+    <div class="container">
+      <h2>The Three Tiers of AI Risk</h2>
+      <p class="section-intro">
+        Not all "AI" carries the same risk to confidential data. The difference between dangerous and
+        defensible isn't the brand of AI — it's the <em>terms</em> the data travels under and the
+        infrastructure it runs on. Here's how the options stack up.
+      </p>
+
+      <div class="stier-grid">
+
+        <div class="stier red">
+          <span class="stier-badge">High Risk</span>
+          <h3>Public / Consumer AI</h3>
+          <p class="ex">ChatGPT Free &amp; Plus, Claude.ai Free/Pro, Gemini consumer</p>
+          <ul>
+            <li>Data may be used to train future models</li>
+            <li>Multi-year retention possible</li>
+            <li>Counts as third-party disclosure</li>
+          </ul>
+          <p class="verdict">Never with confidential data.</p>
+        </div>
+
+        <div class="stier yellow">
+          <span class="stier-badge">Conditional</span>
+          <h3>Shared Cloud Platforms</h3>
+          <p class="ex">Multi-tenant SaaS automation — Zapier, Make.com</p>
+          <ul>
+            <li>Data flows through shared vendor servers</li>
+            <li>SOC 2 / DPA available on paid tiers</li>
+            <li>Vendor staff have controlled access</li>
+          </ul>
+          <p class="verdict">Fine for non-privileged work — admin, intake, scheduling.</p>
+        </div>
+
+        <div class="stier green">
+          <span class="stier-badge">Defensible</span>
+          <h3>Isolated Infrastructure + Commercial API</h3>
+          <p class="ex">Your own private server, <em>or</em> an isolated cloud stack — paired with the AI API on commercial terms</p>
+          <ul>
+            <li>Data stays inside an environment dedicated to you</li>
+            <li>AI calls under commercial terms — no training, short retention</li>
+            <li>You own the logs, the data, and the deletion policy</li>
+          </ul>
+          <p class="verdict">The architecture for confidential work.</p>
+        </div>
+
+      </div>
+
+      <p class="section-intro" style="margin-top:28px; margin-bottom:0;">
+        Everything I build for confidential work lives in that green tier — whether it's a dedicated
+        private automation server or an isolated portal with its own database. The common thread is
+        always the same: your data stays in an environment that's yours, and the AI only ever runs under
+        commercial terms that forbid training.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 4 — HOW I USE AI (BUILD VS RUN)
+  ============================================================ -->
+  <section class="sec-section">
+    <div class="container">
+      <h2>How I Use AI — and Why Your Clients Are Covered</h2>
+      <p class="section-intro">
+        A fair question: if I use an AI assistant like Claude to build your system, does your client data
+        end up in it? No — and the reason is simple once you separate <em>building</em> the system from
+        <em>running</em> it.
+      </p>
+
+      <div class="br-box">
+        <p>
+          Think of a contractor who builds a safe for a bank. They use their own tools — drills, welders,
+          measuring tape — to build it. Those tools never touch the bank's money. The money only goes
+          inside <em>after</em> the safe is built and installed.
+        </p>
+
+        <div class="br-row">
+          <div class="br-icon">🔨</div>
+          <div>
+            <div class="br-title">Building the system</div>
+            <div class="br-detail">
+              An AI assistant helps me write the code — the way a carpenter uses a saw. No client
+              information ever goes into that. It's just construction.
+            </div>
+          </div>
+        </div>
+
+        <div class="br-row">
+          <div class="br-icon">🔒</div>
+          <div>
+            <div class="br-title">Running the system</div>
+            <div class="br-detail">
+              When your system is live and handling real client files, it runs on the secure, isolated
+              setup built for you — using the AI <em>API</em> under commercial terms (no training, short
+              retention, your own key). That's the finished, locked safe. Client data only ever flows
+              through there.
+            </div>
+          </div>
+        </div>
+
+        <div class="br-chain">
+          <div class="br-node">AI assistant<small>Build phase — no client data</small></div>
+          <div class="br-neq">≠</div>
+          <div class="br-node" style="border-color:rgba(6,196,208,.4);">Your isolated system + AI API<small>Run phase — commercial terms</small></div>
+        </div>
+
+        <p style="margin-top:18px; margin-bottom:0;">
+          One question settles it: <strong>did any real client information pass through the build tools?</strong>
+          The answer is no — and I keep it that way.
+          <a href="ai-confidentiality.html" style="font-weight:600; white-space:nowrap;">See the full legal analysis →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 5 — WHAT PROTECTS YOUR DATA
+  ============================================================ -->
+  <section class="sec-section">
+    <div class="container">
+      <h2>What Actually Protects Your Data</h2>
+      <p class="section-intro">
+        The specifics, in plain terms. Every system I build for confidential work includes these by
+        default — not as paid add-ons.
+      </p>
+
+      <div class="prot-grid">
+        <div class="prot-card">
+          <div class="prot-icon">🧱</div>
+          <h4>Per-Client Isolation</h4>
+          <p>Your own database and application. No shared, multi-tenant storage where data can cross between clients.</p>
+        </div>
+        <div class="prot-card">
+          <div class="prot-icon">🔐</div>
+          <h4>Encrypted In Transit &amp; At Rest</h4>
+          <p>All traffic is HTTPS-only — unencrypted access isn't possible. Stored data and files are encrypted on disk.</p>
+        </div>
+        <div class="prot-card">
+          <div class="prot-icon">🪪</div>
+          <h4>Authenticated Access + Database Rules</h4>
+          <p>Only the staff you authorize can log in, and access rules are enforced inside the database itself — not just in the app.</p>
+        </div>
+        <div class="prot-card">
+          <div class="prot-icon">🗝️</div>
+          <h4>Secret Keys Stay Server-Side</h4>
+          <p>Powerful keys live in protected server settings — never shipped to the browser, never stored in code.</p>
+        </div>
+        <div class="prot-card">
+          <div class="prot-icon">🧹</div>
+          <h4>Data Minimization</h4>
+          <p>Sensitive uploads go to private storage, and intake documents are deleted right after the needed details are extracted. Less retained means less exposed.</p>
+        </div>
+        <div class="prot-card">
+          <div class="prot-icon">🚫</div>
+          <h4>No AI Training on Your Data</h4>
+          <p>Your data runs through the AI under commercial terms that contractually prohibit using it to train or improve models.</p>
+        </div>
+        <div class="prot-card">
+          <div class="prot-icon">🏛️</div>
+          <h4>Audited, Reputable Providers</h4>
+          <p>The underlying infrastructure is run by providers that maintain independent SOC 2 security audits — with automated backups and redundancy.</p>
+        </div>
+        <div class="prot-card">
+          <div class="prot-icon">🎯</div>
+          <h4>Smaller Attack Surface</h4>
+          <p>No always-on server sitting open to the internet to be broken into. Components run on demand, then stand down — there's less to attack.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 6 — STRAIGHT ANSWERS
+  ============================================================ -->
+  <section class="sec-section">
+    <div class="container">
+      <h2>Straight Answers</h2>
+      <p class="section-intro">
+        The questions clients actually ask — answered honestly, including the limits. No overpromising.
+      </p>
+
+      <div class="qa">
+        <div class="qa-item">
+          <div class="qa-q">Can you see our data?</div>
+          <div class="qa-a">
+            To build and maintain your system, I have the same access any IT provider or hosting partner
+            has — that's what lets me support you. But your data is <strong>never sold, mined, or fed into
+            AI training</strong>, and access is logged. If you want a setup where no outside party can
+            access your data at all, that's exactly what <strong>Self-Hosted</strong> delivers.
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Is our information used to train AI?</div>
+          <div class="qa-a">
+            <strong>No.</strong> Your data runs through the AI on commercial API terms that contractually
+            forbid using inputs to train or improve the model — a different world from consumer AI apps,
+            where training is often the default.
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Where does our data physically live?</div>
+          <div class="qa-a">
+            In your own isolated database on audited cloud infrastructure (region can be selected) — or,
+            on <strong>Self-Hosted</strong>, entirely within your own accounts. Either way, it's never
+            commingled with another client's.
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">What happens if we ever part ways?</div>
+          <div class="qa-a">
+            What's built is <strong>yours</strong>. Your data can be exported and the system handed over
+            to your own accounts. You're never locked in or held hostage to keep the lights on.
+          </div>
+        </div>
+      </div>
+
+      <div class="legal-note">
+        <strong>Note:</strong> This page describes the security architecture and practices used in systems
+        I build, in plain language for general information. Specific protections, retention windows, and
+        contractual terms are confirmed in writing for your engagement. It is not legal advice — for how
+        these choices map to your professional obligations, see the
+        <a href="ai-confidentiality.html" style="color:var(--accent);">AI &amp; Law</a> page and consult
+        qualified counsel for your jurisdiction.
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA
+  ============================================================ -->
+  <section class="sec-cta">
+    <div class="container">
+      <div class="sec-cta-box">
+        <div class="badge" style="display:inline-flex;margin-bottom:18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Built for Confidential Work
+        </div>
+        <h2>Let's Talk About Your Setup</h2>
+        <p>
+          Whether you want a fully managed system or to own every key yourself, I'll walk you through
+          exactly where your data lives and how it's protected — and give you documentation you can hand
+          to a client, an auditor, or a compliance officer.
+        </p>
+        <div class="cta-buttons">
+          <a href="index.html#services" class="btn btn-primary">See How It Works</a>
+          <a href="index.html#contact"  class="btn btn-outline">Talk to Rob</a>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;text-align:center;">
+        <p style="color:var(--muted);font-size:.85rem;margin-bottom:16px;">Free templates for your practice</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="downloads/data-processing-agreement-template.html" class="btn btn-outline" style="font-size:.85rem;padding:10px 20px;">Data Processing Agreement</a>
+          <a href="downloads/ai-use-policy-template.html" class="btn btn-outline" style="font-size:.85rem;padding:10px 20px;">AI Use Policy Template</a>
+          <a href="downloads/attorney-engagement-letter-language.html" class="btn btn-outline" style="font-size:.85rem;padding:10px 20px;">Engagement Letter Language</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="sec-footer">
+    <div class="container">
+      <p><a href="index.html">← Built Smart by Rob</a> &nbsp;|&nbsp; &copy; 2026 Built Smart by Rob. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    // Navbar scroll behavior
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+  </script>
+
+</body>
+</html>
