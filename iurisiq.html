@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IurisIQ — the modular, AI-powered case management portal built exclusively for small law offices. Bar-compliant trust accounting, conflict checks, private matter intelligence, and single-tenant security. Built by Rob at Built Smart by Rob." />
+  <title>IurisIQ | AI-Powered Practice Management for Law Firms — Built Smart by Rob</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://builtsmartbyrob.com/iurisiq.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="IurisIQ | AI-Powered Practice Management for Small Law Firms" />
+  <meta property="og:description" content="The modular, AI-powered case management portal built exclusively for small law offices. Secure by design. Customizable by nature." />
+  <meta property="og:url"         content="https://builtsmartbyrob.com/iurisiq.html" />
+  <meta property="og:site_name"   content="Built Smart by Rob" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="IurisIQ | AI-Powered Practice Management for Small Law Firms" />
+  <meta name="twitter:description" content="Bar-compliant trust accounting, conflict checks, private matter intelligence, and single-tenant security — built exclusively for small law offices." />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "IurisIQ",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "The modular, AI-powered case management portal built exclusively for small law offices. Secure by design, customizable by nature.",
+    "url": "https://www.iurisiq.com",
+    "author": {
+      "@type": "Person",
+      "name": "Rob Traversi"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Built Smart by Rob",
+      "url": "https://builtsmartbyrob.com"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ── Page-specific styles ─────────────────────────────────── */
+
+    .iq-hero { padding: 140px 0 56px; }
+    .iq-hero-grid {
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center;
+    }
+    .iq-hero img.iq-logo { height: 60px; width: auto; margin-bottom: 26px; }
+    .iq-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      max-width: 640px; margin-bottom: 20px; line-height: 1.12;
+    }
+    .iq-hero .subtitle {
+      font-size: 1.05rem; color: var(--muted); max-width: 620px;
+      line-height: 1.8; margin-bottom: 26px;
+    }
+    .iq-hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .iq-hero-shot {
+      border-radius: var(--radius-lg); border: 1px solid var(--border);
+      box-shadow: var(--shadow-glow); width: 100%; height: auto; display: block;
+    }
+    .iq-attribution { font-size: .85rem; color: var(--muted); margin-top: 24px; }
+    .iq-attribution strong { color: var(--text); }
+
+    /* ── Section wrapper ───────────────────────────────────────── */
+    .iq-section { padding: 60px 0; border-top: 1px solid var(--border); }
+    .iq-section h2 { font-size: clamp(1.35rem, 3vw, 1.9rem); margin-bottom: 10px; }
+    .iq-section .section-intro {
+      color: var(--muted); font-size: .97rem; max-width: 760px;
+      line-height: 1.8; margin-bottom: 32px;
+    }
+
+    /* ── Two pillars ───────────────────────────────────────────── */
+    .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .pillar {
+      background: var(--card); border: 1px solid var(--primary);
+      border-radius: var(--radius-lg); padding: 30px; box-shadow: var(--shadow-glow);
+    }
+    .pillar .pillar-icon { font-size: 1.6rem; margin-bottom: 14px; }
+    .pillar h3 { font-size: 1.15rem; color: var(--white); margin-bottom: 10px; }
+    .pillar p { font-size: .92rem; line-height: 1.75; color: var(--text); }
+
+    /* ── Feature grid (the included core) ──────────────────────── */
+    .feat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .feat-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+    .feat-icon { font-size: 1.35rem; margin-bottom: 10px; }
+    .feat-card h4 {
+      font-size: .98rem; color: var(--white); margin-bottom: 6px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .feat-card p { font-size: .85rem; line-height: 1.6; color: var(--muted); }
+    .feat-tag {
+      font-size: .6rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 100px; background: rgba(6,196,208,.14); color: var(--accent);
+    }
+
+    /* ── Core / Premium section labels ─────────────────────────── */
+    .tier-label {
+      display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+      font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      padding: 5px 13px; border-radius: 100px; margin-bottom: 16px;
+    }
+    .tier-label.core    { background: rgba(6,196,208,.14);  color: var(--accent); border: 1px solid rgba(6,196,208,.35); }
+    .tier-label.premium { background: rgba(99,102,241,.14); color: #a5b4fc;       border: 1px solid rgba(99,102,241,.4); }
+    .premium-tag {
+      font-size: .6rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 100px; background: rgba(99,102,241,.16); color: #a5b4fc;
+    }
+    .ai-card h4 .premium-tag { margin-left: 8px; vertical-align: middle; }
+    .soon-tag {
+      font-size: .6rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 100px; margin-left: 6px; vertical-align: middle;
+      background: rgba(245,158,11,.15); color: #f59e0b; border: 1px solid rgba(245,158,11,.35);
+    }
+
+    /* ── AI modules ────────────────────────────────────────────── */
+    .ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+    .ai-card {
+      background: linear-gradient(160deg, rgba(99,102,241,.08), var(--card) 55%);
+      border: 1px solid rgba(99,102,241,.3); border-radius: var(--radius-lg); padding: 26px;
+    }
+    .ai-card h4 { font-size: 1.02rem; color: var(--white); margin-bottom: 8px; }
+    .ai-card p { font-size: .87rem; line-height: 1.65; color: var(--text); margin-bottom: 14px; }
+    .ai-quote {
+      font-size: .82rem; font-style: italic; color: #a5b4fc;
+      border-left: 2px solid rgba(99,102,241,.5); padding-left: 12px; line-height: 1.55;
+    }
+
+    /* ── Security list ─────────────────────────────────────────── */
+    .sec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+    .sec-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+    .sec-card .sec-icon { font-size: 1.4rem; margin-bottom: 10px; }
+    .sec-card h4 { font-size: .96rem; color: var(--white); margin-bottom: 6px; }
+    .sec-card p { font-size: .84rem; line-height: 1.6; color: var(--muted); }
+
+    /* ── Screenshot gallery ────────────────────────────────────── */
+    .shot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+    .shot { border-radius: var(--radius-lg); border: 1px solid var(--border); overflow: hidden; background: var(--card); }
+    .shot img { width: 100%; height: auto; display: block; }
+    .shot .shot-cap { padding: 12px 16px; font-size: .82rem; color: var(--muted); border-top: 1px solid var(--border); }
+    .shot .shot-cap strong { color: var(--white); }
+
+    /* ── Steps ─────────────────────────────────────────────────── */
+    .step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; counter-reset: step; }
+    .step { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px; position: relative; }
+    .step::before {
+      counter-increment: step; content: counter(step);
+      font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700;
+      width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; background: rgba(6,196,208,.14); color: var(--accent);
+      border: 1px solid rgba(6,196,208,.4); margin-bottom: 16px;
+    }
+    .step h4 { font-size: 1rem; color: var(--white); margin-bottom: 8px; }
+    .step p { font-size: .86rem; line-height: 1.65; color: var(--muted); }
+
+    /* ── CTA ───────────────────────────────────────────────────── */
+    .iq-cta { padding: 60px 0 80px; border-top: 1px solid var(--border); }
+    .iq-cta-box { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 48px; text-align: center; }
+    .iq-cta-box h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 14px; }
+    .iq-cta-box p { color: var(--muted); max-width: 560px; margin: 0 auto 28px; line-height: 1.75; font-size: .97rem; }
+    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    .legal-note {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 16px 20px; font-size: .78rem; color: var(--muted); line-height: 1.65; margin-top: 36px;
+    }
+
+    .iq-footer { text-align: center; padding: 32px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: .82rem; }
+    .iq-footer a { color: var(--accent); }
+
+    @media (max-width: 900px) {
+      .iq-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+    }
+    @media (max-width: 768px) {
+      .iq-hero { padding: 110px 0 44px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="navbar" class="scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="builtsmartlogo.png" alt="Built Smart by Rob" style="height:44px;width:auto;" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="iurisiq.html" style="color:var(--accent);">IurisIQ</a></li>
+        <li><a href="ai-confidentiality.html">AI &amp; Law</a></li>
+        <li><a href="security-privacy.html">Security</a></li>
+        <li><a href="https://blog.builtsmartbyrob.com">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Get Started</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html#services"    onclick="closeMobileMenu()">Services</a>
+      <a href="index.html#portfolio"   onclick="closeMobileMenu()">Portfolio</a>
+      <a href="iurisiq.html" style="color:var(--accent);">IurisIQ</a>
+      <a href="ai-confidentiality.html">AI &amp; Law</a>
+      <a href="security-privacy.html">Security</a>
+      <a href="https://blog.builtsmartbyrob.com">Blog</a>
+      <a href="index.html#contact"     onclick="closeMobileMenu()">Contact</a>
+      <a href="index.html#contact" class="btn btn-primary" onclick="closeMobileMenu()">Get Started</a>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="iq-hero">
+    <div class="container">
+      <div class="iq-hero-grid">
+        <div>
+          <img src="iurisiq-assets/iurisiq-logo.png" alt="IurisIQ" class="iq-logo" />
+          <div class="badge" style="margin-bottom:18px;">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            A Built Smart Product
+          </div>
+          <h1>Your Practice, <span class="grad-text">Elevated by Intelligence.</span></h1>
+          <p class="subtitle">
+            IurisIQ is the modular, AI-powered case management portal built <em>exclusively</em> for small
+            law offices — where AI amplifies your practice without ever compromising client confidentiality.
+            Secure by design. Customizable by nature.
+          </p>
+          <div class="iq-hero-buttons">
+            <a href="https://www.iurisiq.com" target="_blank" rel="noopener" class="btn btn-primary">Visit IurisIQ.com →</a>
+            <a href="index.html#contact" class="btn btn-outline">Talk to Rob</a>
+          </div>
+          <p style="margin-top:16px;font-size:.9rem;color:var(--text);">
+            <strong style="color:var(--white);">Starting at $49/mo per seat</strong>
+            <span style="color:var(--muted);">(2-seat minimum) — the full core portal included, premium modules added as you need them.</span>
+          </p>
+          <p class="iq-attribution">
+            <strong>Built and run by Rob Traversi</strong> — the same person behind Built Smart by Rob.
+            Not a vendor licensing a generic platform; a purpose-built system, deployed and supported directly.
+          </p>
+        </div>
+        <div>
+          <img src="iurisiq-assets/iurisiq-homepage.png" alt="The IurisIQ portal home — Today's Docket, module tiles, and recent activity in one secure workspace" class="iq-hero-shot" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TWO PILLARS
+  ============================================================ -->
+  <section class="iq-section">
+    <div class="container">
+      <h2>Built on Two Uncompromising Pillars</h2>
+      <p class="section-intro">
+        Every decision in IurisIQ traces back to these two principles. Not marketing — architecture.
+      </p>
+
+      <div class="pillar-grid">
+        <div class="pillar">
+          <div class="pillar-icon">🧩</div>
+          <h3>Radical Customization</h3>
+          <p>
+            Every firm is different. IurisIQ starts with a rock-solid core and lets you build outward —
+            snapping in purpose-built modules for the exact workflows your practice needs. It shapes itself
+            to you, not the other way around.
+          </p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🔒</div>
+          <h3>Uncompromising Security</h3>
+          <p>
+            Attorney-client privilege doesn't pause when you use AI — and with IurisIQ, it doesn't have to.
+            Your clients' data never trains external models, never leaves your environment, and is protected
+            at every layer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       INCLUDED CORE
+  ============================================================ -->
+  <section class="iq-section">
+    <div class="container">
+      <span class="tier-label core">● The Core Portal — Included</span>
+      <h2>Everything Included. Nothing Negotiated.</h2>
+      <p class="section-intro">
+        Every IurisIQ deployment ships with the complete core — not a stripped base that charges extra for
+        the essentials you actually need. Every feature below is standard in every deployment, at no add-on
+        cost. Here's what's live on day one.
+      </p>
+
+      <div class="feat-grid">
+        <div class="feat-card">
+          <div class="feat-icon">⚖️</div>
+          <h4>Trust Accounting <span class="feat-tag">IOLTA</span></h4>
+          <p>Full bar-compliant trust accounting in every deployment — real-time ledger, three-way reconciliation, and bar-audit-ready reports. No separate software, no add-on fee.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🔍</div>
+          <h4>Conflict Check</h4>
+          <p>Search prospective clients, opposing parties, and counsel across your entire matter history in under two seconds. Conflicts surface with clear explainability — and every check is logged for bar compliance.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🪟</div>
+          <h4>Client Portal</h4>
+          <p>Clients log in to their own secure space to view their matter, upload documents, and track progress. No phone tag.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🗄️</div>
+          <h4>Document Vault</h4>
+          <p>Secure storage with enterprise-grade malware scanning. Every file is scanned before anyone can open it.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🪪</div>
+          <h4>Client &amp; Matter Cards</h4>
+          <p>Configurable matter schemas for any practice area. Never locked to a single specialty.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">⏰</div>
+          <h4>Smart Reminder Engine</h4>
+          <p>Trigger-based lifecycle reminders: "X days after Y event, remind staff to do Z." Runs on schedule, automatically.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🔐</div>
+          <h4>Secure Login &amp; RBAC</h4>
+          <p>Staff and client auth with flexible, data-driven roles enforced at the database row level — not just the UI.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">📧</div>
+          <h4>Email Notifications</h4>
+          <p>Instant alerts on uploads, activity, and deadlines. Staff and clients stay informed without you lifting a finger.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🛡️</div>
+          <h4>Security &amp; Backups</h4>
+          <p>Nightly encrypted offsite backups with a tested restore runbook. Row-level tenant isolation. Sleep easy.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">📥</div>
+          <h4>Seamless Data Migration</h4>
+          <p>You provide an export from your current system; we handle the mapping, clean-up, and import. Your records arrive organized and ready — no rebuilding from scratch.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">📲</div>
+          <h4>Two-Factor Auth <span class="feat-tag">New</span></h4>
+          <p>Required for attorneys and firm owners. A time-based code on every sign-in means a stolen password alone can never open the portal.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🎨</div>
+          <h4>Attorney Color Coding</h4>
+          <p>Visually tag matters to their assigned attorney. Scan the dashboard and know who owns what — instantly.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">✍️</div>
+          <h4>Client-Driven Intake</h4>
+          <p>Staff enters just a name, email, and case type — the portal sends the invite and the client fills in the rest. No more chasing intake forms.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">💬</div>
+          <h4>Secure Messaging</h4>
+          <p>Threaded, searchable, documented communication between firm and clients. Encrypted in-portal messaging with a full audit trail.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PREMIUM MODULES
+  ============================================================ -->
+  <section class="iq-section">
+    <div class="container">
+      <span class="tier-label premium">◆ Premium Modules — Grow As You Need</span>
+      <h2>Add Capability When Your Practice Is Ready</h2>
+      <p class="section-intro">
+        Beyond the core, IurisIQ grows by module. Premium modules are optional add-ons you activate — and
+        pay for — only when you need them. Each one plugs into your existing portal the day it's turned on,
+        with no new logins and no separate integrations. This is also where the intelligence layer lives:
+        purpose-built tools that work with the matters and files you already have, entirely inside your
+        isolated environment — never a public AI tool.
+      </p>
+
+      <h3 style="font-size:1.05rem;color:var(--white);margin:8px 0 16px;">Intelligence Modules</h3>
+      <div class="ai-grid">
+        <div class="ai-card">
+          <h4>🔎 Matter Intelligence <span class="premium-tag">Premium</span><span class="soon-tag">Coming Soon</span></h4>
+          <p>A private intelligence layer over your own matters, deadlines, and files. Ask a question and get an answer drawn from the documents you already have — surfacing summaries and connections in seconds, all inside your isolated environment.</p>
+          <p class="ai-quote">"Summarize everything that's happened on the Ramirez matter since March."</p>
+        </div>
+        <div class="ai-card">
+          <h4>🧠 AI Brain <span class="premium-tag">Premium</span><span class="soon-tag">Coming Soon</span></h4>
+          <p>Private conversational AI to query your firm's documents, judge preferences, county policies, and institutional knowledge. Your firm's collective knowledge, instantly accessible.</p>
+          <p class="ai-quote">"What's Judge Martinez's stance on continuances?"</p>
+        </div>
+        <div class="ai-card">
+          <h4>💰 Financial Discovery <span class="premium-tag">Premium</span><span class="soon-tag">Coming Soon</span></h4>
+          <p>Financial discovery, read and understood. Pulls the other side's entire production into your secure portal, reads every page, and tells you what you have, what's missing, and what they didn't disclose.</p>
+          <p class="ai-quote">"Which accounts received transfers over $10,000?"</p>
+        </div>
+        <div class="ai-card">
+          <h4>📝 Document Generation <span class="premium-tag">Premium</span></h4>
+          <p>Generate documents from your firm's own templates instantly — populated from the matter you're already working in. Less time drafting, more time practicing.</p>
+        </div>
+        <div class="ai-card">
+          <h4>🌐 In-Portal Translation <span class="premium-tag">Premium</span></h4>
+          <p>Translate client documents directly in the portal — Spanish to English included, other languages on request. Language barriers shouldn't be intake barriers.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.05rem;color:var(--white);margin:32px 0 16px;">Integration &amp; Workflow Modules</h3>
+      <div class="feat-grid">
+        <div class="feat-card">
+          <div class="feat-icon">✒️</div>
+          <h4>E-Signature <span class="premium-tag">Premium</span></h4>
+          <p>SHA-256 integrity and a full audit trail. Legally sound, frictionless for clients, and documented forever.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🧾</div>
+          <h4>Billing Bridge <span class="premium-tag">Premium</span></h4>
+          <p>Pull unbilled entries from FreshBooks or QuickBooks, generate invoices with a payment link embedded, and watch the trust ledger update when the client pays.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">📅</div>
+          <h4>Calendar Sync <span class="premium-tag">Premium</span></h4>
+          <p>Hearings, deadlines, and appointments synced with the calendar your firm already uses. Supports iCal subscriptions.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🗓️</div>
+          <h4>Online Scheduling <span class="premium-tag">Premium</span></h4>
+          <p>Prospective clients book consultations from your website — pick an attorney, grab an open slot, and the booking lands in your portal. You only ever show times you're actually free.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">☁️</div>
+          <h4>Cloud Drive Sync <span class="premium-tag">Premium</span></h4>
+          <p>Two-way sync between the portal and your firm's Dropbox or Google Drive. Uploads mirror to your cloud, and files you add there flow back onto the matching matter automatically.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">📊</div>
+          <h4>KPI Dashboard <span class="premium-tag">Premium</span></h4>
+          <p>A bespoke metrics view integrating Stripe, QuickBooks, calendars, and payroll data — the health of your practice in one screen.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🛠️</div>
+          <h4>Bespoke Modules <span class="premium-tag">Premium</span></h4>
+          <p>If the menu doesn't cover your workflow, we build it. Custom modules are scoped, designed, and delivered to your exact spec — on the same platform, no new logins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECURITY
+  ============================================================ -->
+  <section class="iq-section">
+    <div class="container">
+      <h2>Your Clients' Secrets Stay Yours.</h2>
+      <p class="section-intro">
+        IurisIQ's AI architecture is designed from the ground up around one principle: your clients'
+        information never leaves your controlled environment. Unlike generic AI tools, IurisIQ runs in an
+        isolated, single-tenant deployment where the AI works with your data — and only for your firm.
+      </p>
+
+      <div class="sec-grid">
+        <div class="sec-card">
+          <div class="sec-icon">🧱</div>
+          <h4>Single-Tenant Isolation</h4>
+          <p>Your firm's database, storage, and AI context are completely separated from any other client. There is no shared pool — ever.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-icon">🚫</div>
+          <h4>Never Trains External Models</h4>
+          <p>Your documents serve as AI context. They're never used to retrain or improve any external model. Your knowledge stays yours.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-icon">🔐</div>
+          <h4>Row-Level Permissions</h4>
+          <p>Role permissions are enforced at the database row level. Even a misconfigured UI can't expose data it shouldn't see.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-icon">🦠</div>
+          <h4>Malware Scanning</h4>
+          <p>Every file — from clients or staff — is scanned by a commercial antivirus engine before it's visible. Infected files are deleted automatically.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-icon">🗃️</div>
+          <h4>Encrypted Offsite Backups</h4>
+          <p>Your data is backed up nightly to encrypted offsite storage with a tested, documented restore procedure. We've run the drill.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-icon">📲</div>
+          <h4>Mandatory 2FA</h4>
+          <p>Attorneys and firm owners must enroll in TOTP-based 2FA. A stolen password alone can never open the portal.</p>
+        </div>
+      </div>
+
+      <p class="section-intro" style="margin-top:26px; margin-bottom:0;">
+        The security thinking behind IurisIQ is the same standard applied across every Built Smart system.
+        <a href="security-privacy.html" style="color:var(--accent);font-weight:600;">See the full Security &amp; Privacy breakdown →</a>
+        &nbsp;·&nbsp; For attorneys weighing AI against their ethical obligations,
+        <a href="ai-confidentiality.html" style="color:var(--accent);font-weight:600;">read the AI &amp; Law analysis →</a>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SCREENSHOTS
+  ============================================================ -->
+  <section class="iq-section">
+    <div class="container">
+      <h2>A Look Inside the Portal</h2>
+      <p class="section-intro">
+        Real screens from a live IurisIQ deployment — the day-to-day command center your team logs into.
+      </p>
+
+      <div class="shot-grid">
+        <div class="shot">
+          <img src="iurisiq-assets/iurisiq-dashboard.png" alt="IurisIQ dashboard screen" loading="lazy" />
+          <div class="shot-cap"><strong>Dashboard</strong> — caseload, deadlines, and what needs attention at a glance.</div>
+        </div>
+        <div class="shot">
+          <img src="iurisiq-assets/iurisiq-clients.png" alt="IurisIQ clients and matters screen" loading="lazy" />
+          <div class="shot-cap"><strong>Clients &amp; Matters</strong> — configurable cards for any practice area.</div>
+        </div>
+        <div class="shot">
+          <img src="iurisiq-assets/iurisiq-trustacct.png" alt="IurisIQ trust accounting screen" loading="lazy" />
+          <div class="shot-cap"><strong>Trust Accounting</strong> — bar-compliant IOLTA ledger, built in.</div>
+        </div>
+        <div class="shot">
+          <img src="iurisiq-assets/iurisiq-documentintake.png" alt="IurisIQ document intake screen" loading="lazy" />
+          <div class="shot-cap"><strong>Document Intake</strong> — secure uploads, scanned before anyone can open them.</div>
+        </div>
+        <div class="shot">
+          <img src="iurisiq-assets/iurisiq-calendar.png" alt="IurisIQ calendar screen" loading="lazy" />
+          <div class="shot-cap"><strong>Calendar</strong> — hearings, deadlines, and appointments in one view.</div>
+        </div>
+        <div class="shot">
+          <img src="iurisiq-assets/iurisiq-translation.png" alt="IurisIQ in-portal translation screen" loading="lazy" />
+          <div class="shot-cap"><strong>Translation</strong> — translate client documents right in the portal.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       HOW IT WORKS
+  ============================================================ -->
+  <section class="iq-section">
+    <div class="container">
+      <h2>Up and Running in Three Steps</h2>
+      <p class="section-intro">
+        No canned demo, no drawn-out sales cycle — a straight path from conversation to a live portal.
+      </p>
+
+      <div class="step-grid">
+        <div class="step">
+          <h4>Discovery Conversation</h4>
+          <p>We learn your practice, your workflows, and your friction points — a real conversation about what actually slows you down.</p>
+        </div>
+        <div class="step">
+          <h4>Core Deployment</h4>
+          <p>Your isolated portal is configured, branded, and delivered. Staff and clients get access. The full core is live and running.</p>
+        </div>
+        <div class="step">
+          <h4>Grow by Module</h4>
+          <p>As your needs evolve, new modules are activated or built to spec. Your portal grows with your practice, on your timeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA
+  ============================================================ -->
+  <section class="iq-cta">
+    <div class="container">
+      <div class="iq-cta-box">
+        <div class="badge" style="display:inline-flex;margin-bottom:18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Attorney-Client Privilege, Protected by Design
+        </div>
+        <h2>Let's Talk About Your Practice</h2>
+        <p>
+          IurisIQ is deployed for law firms by the same person who builds them — not a vendor licensing a
+          generic platform. No sales pressure, just a real conversation about your practice and whether
+          it's the right fit.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://www.iurisiq.com" target="_blank" rel="noopener" class="btn btn-primary">Explore IurisIQ.com →</a>
+          <a href="index.html#contact" class="btn btn-outline">Talk to Rob</a>
+        </div>
+        <p style="margin-top:22px;font-size:.85rem;color:var(--muted);">
+          Starting at <strong style="color:var(--text);">$49/mo per seat</strong> · 2-seat minimum · full core portal included
+        </p>
+      </div>
+
+      <div class="legal-note">
+        <strong>Note:</strong> This page summarizes the IurisIQ product for general information. Specific
+        features, security protections, and contractual terms are confirmed in writing for your engagement.
+        It is not legal advice — for how these choices map to your professional obligations, see the
+        <a href="ai-confidentiality.html" style="color:var(--accent);">AI &amp; Law</a> page and consult
+        qualified counsel for your jurisdiction.
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="iq-footer">
+    <div class="container">
+      <p><a href="index.html">← Built Smart by Rob</a> &nbsp;|&nbsp; &copy; 2026 Built Smart by Rob. IurisIQ&trade; — Attorney-client privilege protected by design.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    // Navbar scroll behavior
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+  </script>
+
+</body>
+</html>

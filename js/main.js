@@ -161,3 +161,72 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
+
+// --- Latest blog posts (pulled live from Hashnode's public API; no key needed) ---
+(function loadLatestPosts() {
+  const grid = document.getElementById('blog-grid');
+  if (!grid) return;
+
+  const HOST = 'blog.builtsmartbyrob.com';
+  const query = `
+    query Latest($host: String!) {
+      publication(host: $host) {
+        posts(first: 3) {
+          edges {
+            node {
+              title
+              brief
+              url
+              publishedAt
+              readTimeInMinutes
+            }
+          }
+        }
+      }
+    }`;
+
+  const escapeHtml = (s) =>
+    String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+
+  const fallback = () => {
+    grid.innerHTML =
+      '<p class="blog-loading">Fresh posts are on the blog — ' +
+      '<a href="https://blog.builtsmartbyrob.com" style="color:var(--accent);font-weight:600;">take a look →</a></p>';
+  };
+
+  fetch('https://gql.hashnode.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query, variables: { host: HOST } })
+  })
+    .then((r) => r.json())
+    .then((data) => {
+      const edges =
+        (data && data.data && data.data.publication &&
+          data.data.publication.posts && data.data.publication.posts.edges) || [];
+      if (!edges.length) return fallback();
+
+      grid.innerHTML = edges
+        .map((edge) => {
+          const p = edge.node;
+          const date = new Date(p.publishedAt).toLocaleDateString('en-US', {
+            year: 'numeric', month: 'short', day: 'numeric'
+          });
+          const read = p.readTimeInMinutes ? ' · ' + p.readTimeInMinutes + ' min read' : '';
+          return (
+            '<a class="blog-card" href="' + p.url + '">' +
+              '<div class="blog-card-meta">' + date + read + '</div>' +
+              '<h3 class="blog-card-title">' + escapeHtml(p.title) + '</h3>' +
+              '<p class="blog-card-brief">' + escapeHtml(p.brief || '') + '</p>' +
+              '<span class="blog-card-link">Read more →</span>' +
+            '</a>'
+          );
+        })
+        .join('');
+    })
+    .catch(fallback);
+})();
