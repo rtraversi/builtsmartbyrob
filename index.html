@@ -488,19 +488,33 @@
           <div class="portfolio-card reveal">
             <div class="portfolio-thumb" style="background-image: url('pacandgosite.jpg'); background-size: cover; background-position: top center;">
               <div class="thumb-overlay"></div>
-              <div class="wip-badge" style="background: rgba(6,182,212,.2); border-color: rgba(6,182,212,.4); color: var(--accent);">Demo</div>
             </div>
             <div class="portfolio-body">
               <h3>Pac and Go Travel</h3>
               <p>A full-service site for a travel agency — complete with a fully functional back-end admin panel and individual agent mini-sites, each with their own permissions.</p>
-              <a href="https://pacandgo-travel-mockup.netlify.app/" target="_blank" rel="noopener" class="portfolio-link">
-                View Demo
+              <a href="https://www.pacandgotravel.com" target="_blank" rel="noopener" class="portfolio-link">
+                Visit Site
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </div>
           </div>
 
-          <!-- Site 4 (WIP) -->
+          <!-- Site 4: TROS Hauling & Removal -->
+          <div class="portfolio-card reveal">
+            <div class="portfolio-thumb" style="background-image: url('tthaz.png'); background-size: cover; background-position: top center;">
+              <div class="thumb-overlay"></div>
+            </div>
+            <div class="portfolio-body">
+              <h3>TROS Hauling &amp; Removal</h3>
+              <p>A site for a veteran-owned hauling and junk removal company in Tucson — built around upfront pricing and same-day availability, so homeowners and contractors can size up a job and request a free estimate in a couple of taps.</p>
+              <a href="https://tthaz.com/" target="_blank" rel="noopener" class="portfolio-link">
+                Visit Site
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Site 5 (WIP) -->
           <div class="portfolio-card reveal">
             <div class="portfolio-thumb" style="background-image: url('straitarrow.jpg'); background-size: cover; background-position: top center;">
               <div class="thumb-overlay"></div>
@@ -529,10 +543,34 @@
           <h3 style="font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 12px;">Workflows That <span class="grad-text">Run Themselves</span></h3>
           <p>Automations don't have to be complex to be valuable. Some handle a dozen tasks at once; others — like the office visit tracker — do one small job that quietly takes time and stress off a team's plate, so workers can focus on what matters and still get the information they need.</p>
           <p style="margin-top:16px; font-size:.9rem; color:var(--muted);">
-            The examples below are <strong style="color:var(--text);">deployed, real-world automations</strong> currently running for clients — not demos or mockups. They represent a fraction of what's possible. New examples are added regularly as we build, and the range of problems automation can solve is far broader than what you see here. If you have a process in mind, <a href="#contact">let's talk about it</a>.
+            Most of the examples below are <strong style="color:var(--text);">deployed, real-world automations</strong> currently running for clients. The first is an <strong style="color:var(--text);">interactive demo you can open and click through</strong> — the same build, running on generated data for a firm that doesn't exist, so there is nothing confidential in it. They represent a fraction of what's possible. New examples are added regularly as we build, and the range of problems automation can solve is far broader than what you see here. If you have a process in mind, <a href="#contact">let's talk about it</a>.
           </p>
         </div>
         <div class="portfolio-grid">
+
+          <!-- Automation 0: Settlement Dashboard - interactive demo -->
+          <div class="auto-card reveal">
+            <div class="auto-thumb">
+              <img src="settlement-dashboard.jpg" alt="Settlement dashboard: KPI cards for total settled, cases and average per case, above donut and line charts" loading="lazy" width="1100" height="635">
+              <div class="thumb-overlay"></div>
+              <span class="auto-badge">Interactive demo</span>
+            </div>
+            <div class="auto-body">
+              <h3>Settlement Reporting Dashboard</h3>
+              <p>Plaintiff firms routinely pay a five-figure annual subscription to a business-intelligence platform to produce <em>one report</em> over <em>one export</em>. This is that report, built as a small automation instead: the nightly export lands in storage the firm already owns, a scheduled job normalizes it, and the dashboard serves from a private URL behind a login. Click any figure — a month, an attorney, a bar in a chart — and it hands back the individual matters behind it. It also reports the defects it finds in the source data instead of quietly papering over them.</p>
+              <div class="auto-tags">
+                <span class="auto-tag">Cloudflare Workers</span>
+                <span class="auto-tag">Scheduled ingest</span>
+                <span class="auto-tag">Object storage</span>
+                <span class="auto-tag">Drill-through</span>
+                <span class="auto-tag">Login-gated</span>
+              </div>
+              <a href="/examples/settlement-dashboard/" class="portfolio-link" style="margin-top:18px;">
+                Open the interactive demo
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
 
           <!-- Automation 1: Proof Scanner -->
           <div class="auto-card reveal">
@@ -1080,7 +1118,8 @@
             <li><a href="#contact">Contact</a></li>
             <li><a href="https://www.katychavez.com" target="_blank" rel="noopener">Katy Chavez</a></li>
             <li><a href="https://www.cruisingwithmetravel.com" target="_blank" rel="noopener">Cruising With Me</a></li>
-            <li><a href="https://pacandgo-travel-mockup.netlify.app/" target="_blank" rel="noopener">Pac and Go Travel</a></li>
+            <li><a href="https://www.pacandgotravel.com" target="_blank" rel="noopener">Pac and Go Travel</a></li>
+            <li><a href="https://tthaz.com/" target="_blank" rel="noopener">TROS Hauling &amp; Removal</a></li>
           </ul>
         </div>
       </div>
