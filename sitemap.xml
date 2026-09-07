@@ -14,6 +14,12 @@
   </url>
 
   <url>
+    <loc>https://builtsmartbyrob.com/reviews.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://builtsmartbyrob.com/downloads/ai-use-policy-template.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>

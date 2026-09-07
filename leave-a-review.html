@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Leave a review for Built Smart by Rob." />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Leave a Review | Built Smart by Rob</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    .lar-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 100px 24px 60px; }
+    .lar-box {
+      width: 100%; max-width: 520px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 40px;
+      box-shadow: var(--shadow-glow);
+    }
+    .lar-logo { display: block; margin: 0 auto 28px; height: 40px; width: auto; }
+    .lar-box h1 { font-size: 1.5rem; margin-bottom: 10px; text-align: center; }
+    .lar-box .lar-sub { color: var(--muted); font-size: .92rem; text-align: center; margin-bottom: 28px; line-height: 1.7; }
+
+    .star-picker { display: flex; gap: 8px; justify-content: center; margin-bottom: 24px; }
+    .star-picker button {
+      background: none; border: none; cursor: pointer; padding: 0;
+      font-size: 2rem; line-height: 1; color: var(--border); transition: color .15s ease;
+    }
+    .star-picker button.filled { color: var(--accent); }
+
+    .lar-state { text-align: center; color: var(--muted); font-size: .95rem; padding: 20px 0; }
+    .lar-state.error { color: #f87171; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body style="background:var(--bg);">
+
+  <div class="lar-wrap">
+    <div class="lar-box">
+      <a href="index.html">
+        <img src="builtsmartlogo.png" alt="Built Smart by Rob" class="lar-logo" />
+      </a>
+
+      <div id="lar-loading" class="lar-state">Checking your link…</div>
+
+      <div id="lar-invalid" class="lar-state error" hidden>
+        This review link is invalid or has already been used. If you'd like to leave a review,
+        just ask for a new link.
+      </div>
+
+      <div id="lar-form-wrap" hidden>
+        <h1>Leave a Review</h1>
+        <p class="lar-sub" id="lar-greeting">How was your experience?</p>
+
+        <form id="review-form" novalidate>
+          <div class="star-picker" id="star-picker">
+            <button type="button" data-value="1" aria-label="1 star">★</button>
+            <button type="button" data-value="2" aria-label="2 stars">★</button>
+            <button type="button" data-value="3" aria-label="3 stars">★</button>
+            <button type="button" data-value="4" aria-label="4 stars">★</button>
+            <button type="button" data-value="5" aria-label="5 stars">★</button>
+          </div>
+          <input type="hidden" id="rating" name="rating" value="" />
+
+          <div class="form-group">
+            <label for="displayName">Name (as you'd like it shown)</label>
+            <input type="text" id="displayName" name="displayName" maxlength="100" required />
+          </div>
+
+          <div class="form-group">
+            <label for="body">Your review</label>
+            <textarea id="body" name="body" maxlength="2000" required placeholder="What was it like working together?"></textarea>
+          </div>
+
+          <button type="submit" id="lar-submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+            Submit Review
+          </button>
+          <div class="form-status" id="lar-status"></div>
+        </form>
+      </div>
+
+      <div id="lar-success" class="lar-state" hidden>
+        Thank you! Your review has been submitted and will appear on the site once it's approved.
+      </div>
+    </div>
+  </div>
+
+  <script src="js/leave-a-review.js" defer></script>
+
+</body>
+</html>

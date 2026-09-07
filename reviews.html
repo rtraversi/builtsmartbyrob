@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="What clients say about working with Built Smart by Rob — automation, websites, and AI-assisted systems built for businesses that handle real work and real data." />
+  <title>Client Reviews | Built Smart by Rob</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://builtsmartbyrob.com/reviews.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Client Reviews | Built Smart by Rob" />
+  <meta property="og:description" content="What clients say about working with Built Smart by Rob." />
+  <meta property="og:url"         content="https://builtsmartbyrob.com/reviews.html" />
+  <meta property="og:site_name"   content="Built Smart by Rob" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:title"       content="Client Reviews | Built Smart by Rob" />
+  <meta name="twitter:description" content="What clients say about working with Built Smart by Rob." />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Client Reviews",
+    "description": "What clients say about working with Built Smart by Rob.",
+    "url": "https://builtsmartbyrob.com/reviews.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Built Smart by Rob",
+      "url": "https://builtsmartbyrob.com"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ── Page-specific styles ─────────────────────────────────── */
+
+    .rev-hero { padding: 140px 0 56px; text-align: center; }
+    .rev-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      max-width: 720px;
+      margin: 0 auto 16px;
+      line-height: 1.15;
+    }
+    .rev-hero .subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .rev-section { padding: 0 0 90px; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+    }
+
+    .review-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .review-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .stars { display: flex; gap: 3px; font-size: 1.1rem; line-height: 1; }
+    .stars .star { color: var(--border); }
+    .stars .star.filled { color: var(--accent); }
+
+    .review-card .review-body {
+      font-size: .93rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin: 0;
+      flex: 1;
+    }
+    .review-card .review-name {
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .review-card .review-date {
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    .reviews-status {
+      text-align: center;
+      color: var(--muted);
+      font-size: .95rem;
+      padding: 40px 0;
+    }
+
+    .rev-footer { text-align: center; padding: 32px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: .82rem; }
+    .rev-footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="navbar" class="scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="builtsmartlogo.png" alt="Built Smart by Rob" style="height:44px;width:auto;" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="iurisiq.html">IurisIQ</a></li>
+        <li><a href="ai-confidentiality.html">AI &amp; Law</a></li>
+        <li><a href="security-privacy.html">Security</a></li>
+        <li><a href="https://blog.builtsmartbyrob.com">Blog</a></li>
+        <li><a href="reviews.html" style="color:var(--accent);">Reviews</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Get Started</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html#services"    onclick="closeMobileMenu()">Services</a>
+      <a href="index.html#portfolio"   onclick="closeMobileMenu()">Portfolio</a>
+      <a href="iurisiq.html">IurisIQ</a>
+      <a href="ai-confidentiality.html">AI &amp; Law</a>
+      <a href="security-privacy.html">Security</a>
+      <a href="https://blog.builtsmartbyrob.com">Blog</a>
+      <a href="reviews.html" style="color:var(--accent);">Reviews</a>
+      <a href="index.html#about"       onclick="closeMobileMenu()">About</a>
+      <a href="index.html#contact"     onclick="closeMobileMenu()">Contact</a>
+      <a href="index.html#contact" class="btn btn-primary" onclick="closeMobileMenu()">Get Started</a>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="rev-hero">
+    <div class="container">
+      <h1>What Clients Say</h1>
+      <p class="subtitle">
+        Reviews here come only from verified clients — each one submitted through a
+        personal, one-time link sent after a project wraps up.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       REVIEWS GRID
+  ============================================================ -->
+  <section class="rev-section">
+    <div class="container">
+      <div id="reviews-status" class="reviews-status">Loading reviews…</div>
+      <div id="reviews-grid" class="reviews-grid" hidden></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="rev-footer">
+    <div class="container">
+      <p><a href="index.html">← Built Smart by Rob</a> &nbsp;|&nbsp; &copy; 2026 Built Smart by Rob. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    // Navbar scroll behavior
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+  </script>
+
+  <script src="js/reviews.js" defer></script>
+
+</body>
+</html>

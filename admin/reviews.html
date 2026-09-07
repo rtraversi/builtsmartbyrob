@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Generate Review Link | Built Smart by Rob</title>
+
+  <style>
+    :root {
+      --bg: #070e1c; --card: #0e1f34; --border: #163050;
+      --primary: #1565c0; --accent: #06c4d0; --text: #edf4ff; --muted: #5a8fb0; --white: #f0f8ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+      font-family: system-ui, sans-serif;
+      display: flex; align-items: center; justify-content: center; padding: 40px 20px;
+    }
+    .box {
+      width: 100%; max-width: 440px; background: var(--card);
+      border: 1px solid var(--border); border-radius: 16px; padding: 32px;
+    }
+    h1 { font-size: 1.3rem; margin: 0 0 20px; color: var(--white); }
+    label { display: block; font-size: .85rem; margin-bottom: 6px; color: var(--muted); }
+    input {
+      width: 100%; background: #0b1828; border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text); padding: 10px 12px; font-size: .95rem; margin-bottom: 16px;
+    }
+    input:focus { outline: none; border-color: var(--primary); }
+    button {
+      width: 100%; background: var(--primary); color: #fff; border: none;
+      border-radius: 8px; padding: 12px; font-size: .95rem; font-weight: 600; cursor: pointer;
+    }
+    button:hover { opacity: .9; }
+    button:disabled { opacity: .5; cursor: not-allowed; }
+    .msg { margin-top: 14px; font-size: .88rem; }
+    .msg.error { color: #f87171; }
+    .result {
+      margin-top: 18px; padding: 14px; background: #0b1828; border: 1px solid var(--border);
+      border-radius: 8px; word-break: break-all; font-size: .85rem;
+    }
+    .result .exp { color: var(--muted); font-size: .78rem; margin-top: 8px; }
+    .copy-btn { margin-top: 10px; background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Generate Client Review Link</h1>
+
+    <label for="admin-secret">Admin password</label>
+    <input type="password" id="admin-secret" autocomplete="off" />
+
+    <label for="client-name">Client name</label>
+    <input type="text" id="client-name" autocomplete="off" />
+
+    <button id="generate-btn">Generate Link</button>
+
+    <div id="msg" class="msg" hidden></div>
+
+    <div id="result" class="result" hidden>
+      <div id="result-link"></div>
+      <div class="exp" id="result-exp"></div>
+      <button id="copy-btn" class="copy-btn">Copy Link</button>
+    </div>
+  </div>
+
+  <script>
+    const secretInput = document.getElementById('admin-secret');
+    const nameInput = document.getElementById('client-name');
+    const generateBtn = document.getElementById('generate-btn');
+    const msgEl = document.getElementById('msg');
+    const resultEl = document.getElementById('result');
+    const resultLinkEl = document.getElementById('result-link');
+    const resultExpEl = document.getElementById('result-exp');
+    const copyBtn = document.getElementById('copy-btn');
+
+    try {
+      const stored = sessionStorage.getItem('bsbr_admin_secret');
+      if (stored) secretInput.value = stored;
+    } catch (e) {}
+
+    function showMsg(text, isError) {
+      msgEl.textContent = text;
+      msgEl.className = 'msg' + (isError ? ' error' : '');
+      msgEl.hidden = false;
+    }
+
+    generateBtn.addEventListener('click', () => {
+      const secret = secretInput.value.trim();
+      const clientName = nameInput.value.trim();
+
+      msgEl.hidden = true;
+      resultEl.hidden = true;
+
+      if (!secret) { showMsg('Enter the admin password.', true); return; }
+      if (!clientName) { showMsg('Enter a client name.', true); return; }
+
+      generateBtn.disabled = true;
+      generateBtn.textContent = 'Generating…';
+
+      fetch('/.netlify/functions/create-invite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-admin-secret': secret },
+        body: JSON.stringify({ clientName }),
+      })
+        .then((res) => res.json().then((data) => ({ ok: res.ok, status: res.status, data })))
+        .then(({ ok, status, data }) => {
+          generateBtn.disabled = false;
+          generateBtn.textContent = 'Generate Link';
+
+          if (!ok) {
+            if (status === 401) {
+              try { sessionStorage.removeItem('bsbr_admin_secret'); } catch (e) {}
+              showMsg('Incorrect admin password.', true);
+            } else {
+              showMsg('Something went wrong. Please try again.', true);
+            }
+            return;
+          }
+
+          try { sessionStorage.setItem('bsbr_admin_secret', secret); } catch (e) {}
+
+          resultLinkEl.textContent = data.link;
+          resultExpEl.textContent = 'Expires ' + new Date(data.expiresAt).toLocaleDateString();
+          resultEl.hidden = false;
+          nameInput.value = '';
+        })
+        .catch(() => {
+          generateBtn.disabled = false;
+          generateBtn.textContent = 'Generate Link';
+          showMsg('Something went wrong. Please try again.', true);
+        });
+    });
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(resultLinkEl.textContent).then(() => {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => { copyBtn.textContent = 'Copy Link'; }, 1500);
+      });
+    });
+  </script>
+
+</body>
+</html>
