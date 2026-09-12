@@ -843,9 +843,10 @@
             <div class="def-title">Running the system</div>
             <div class="def-detail">
               When the automation is actually handling real client files, it runs on a completely
-              separate, far more secure setup — the Claude API on a private server. That's the
-              finished, locked safe. Client data only ever flows through that secure system,
-              never through the tools used to build it.
+              separate, far more secure setup — a dedicated database and application, isolated from
+              every other client, calling the Claude API directly. That's the finished, locked safe.
+              Client data only ever flows through that secure system, never through the tools used to
+              build it.
             </div>
           </div>
         </div>
@@ -853,7 +854,7 @@
         <div class="sp-chain" style="margin: 28px 0 20px;">
           <div class="sp-node">Claude Max<br><small style="color:var(--muted);">Build phase — no client data</small></div>
           <div class="sp-arrow">≠</div>
-          <div class="sp-node" style="border-color:rgba(56,189,248,0.4);">Your isolated system + Claude API<br><small style="color:var(--muted);">Run phase — isolated infrastructure</small></div>
+          <div class="sp-node" style="border-color:rgba(56,189,248,0.4);">Your isolated system + Claude API<br><small style="color:var(--muted);">Run phase — dedicated database &amp; application</small></div>
         </div>
 
         <div class="sp-label" style="margin-top:8px;">The Simple Test</div>
