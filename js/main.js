@@ -230,3 +230,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     })
     .catch(fallback);
 })();
+
+/* ── Iurix Accreditation screenshot rotator ──────────────── */
+(function () {
+  const slides = document.querySelectorAll('.iurix-slides img');
+  if (slides.length < 2) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let i = 0;
+  setInterval(function () {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+  }, 4000);
+})();

@@ -224,6 +224,57 @@ ul { list-style: none; }
 .mobile-menu .btn { margin: 16px 24px; }
 
 /* ============================================================
+   INTRODUCING IURIX ACCREDITATION
+   ============================================================ */
+#iurix-intro {
+  padding: 130px 0 40px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+#iurix-intro + #hero { padding-top: 40px; }
+
+.iurix-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.iurix-copy h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 16px 0; }
+.iurix-copy p  { color: var(--muted); font-size: 1.05rem; margin-bottom: 28px; }
+.iurix-copy p a { font-weight: 600; }
+
+.iurix-shot {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow), var(--shadow-glow);
+  transition: transform var(--transition), border-color var(--transition);
+}
+.iurix-shot:hover { transform: translateY(-4px); border-color: var(--accent); }
+.iurix-shot-bar { display: flex; gap: 6px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.iurix-shot-bar span { width: 10px; height: 10px; border-radius: 50%; background: var(--border); }
+.iurix-slides { position: relative; aspect-ratio: 1400 / 872; }
+.iurix-slides img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.iurix-slides img.active { opacity: 1; }
+
+@media (max-width: 1024px) {
+  .iurix-layout { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 768px) {
+  #iurix-intro { padding: 110px 0 32px; }
+}
+
+/* ============================================================
    HERO
    ============================================================ */
 #hero {
