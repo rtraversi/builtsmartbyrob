@@ -1654,3 +1654,63 @@ ul { list-style: none; }
 @media (max-width: 768px) {
   .blog-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   LEGAL PAGES (privacy.html, terms.html)
+   Every size here is 14px or larger, and body copy uses --text,
+   to meet the USCIS developer readability checklist.
+   ============================================================ */
+.legal-hero { padding: 140px 0 40px; }
+.legal-hero .badge { font-size: .875rem; }
+.legal-hero .container { max-width: 780px; }
+.legal-hero h1 { font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 16px; }
+.legal-hero .legal-meta { font-size: .9rem; color: var(--muted); line-height: 1.8; }
+.legal-hero .legal-meta strong { color: var(--text); }
+
+.legal-body { max-width: 780px; padding-bottom: 80px; }
+.legal-body h2 {
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  margin: 48px 0 14px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 96px;
+}
+.legal-body h3 { font-size: 1.1rem; color: var(--white); margin: 26px 0 10px; }
+.legal-body p,
+.legal-body li { font-size: 1rem; line-height: 1.8; color: var(--text); }
+.legal-body p { margin-bottom: 14px; }
+.legal-body ul { list-style: disc; padding-left: 22px; margin: 0 0 16px; display: flex; flex-direction: column; gap: 8px; }
+.legal-body strong { color: var(--white); }
+.legal-body a { text-decoration: underline; text-underline-offset: 3px; }
+
+.legal-summary {
+  background: var(--card);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: 26px 28px;
+  margin-bottom: 8px;
+}
+.legal-summary h2 { margin: 0 0 12px; padding: 0; border: 0; font-size: 1.2rem; }
+.legal-summary ul { margin-bottom: 0; }
+
+.legal-toc { margin: 32px 0 0; }
+.legal-toc h2 { margin: 0 0 12px; padding: 0; border: 0; font-size: 1.1rem; }
+.legal-toc ol { list-style: decimal; padding-left: 22px; columns: 2; column-gap: 32px; }
+.legal-toc li { font-size: .95rem; line-height: 1.9; break-inside: avoid; }
+
+.legal-contact {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 10px 0 18px;
+}
+.legal-contact p:last-child { margin-bottom: 0; }
+
+.legal-footer { text-align: center; padding: 32px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; line-height: 1.8; }
+.legal-footer a { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .legal-hero { padding: 110px 0 32px; }
+  .legal-toc ol { columns: 1; }
+}
