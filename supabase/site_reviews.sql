@@ -8,7 +8,9 @@
 -- by setting site_reviews.status = 'approved' in the Supabase table editor.
 --
 -- The admin password for admin/reviews.html is stored only as a SHA-256 hash in
--- site_settings (key 'admin_secret_sha256'); it is set outside this file.
+-- site_settings (key 'admin_secret_sha256'); it is set outside this file. The
+-- approve/reject email buttons use REVIEW_MODERATION_SECRET (Netlify env), whose
+-- hash is site_settings 'moderation_secret_sha256'.
 
 CREATE TABLE public.site_invites (
   id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -113,3 +115,29 @@ REVOKE ALL ON FUNCTION public.site_redeem_invite(text, text, text, text, int, te
 GRANT EXECUTE ON FUNCTION public.site_create_invite(text, text, text) TO anon, service_role;
 GRANT EXECUTE ON FUNCTION public.site_validate_invite(text) TO anon, service_role;
 GRANT EXECUTE ON FUNCTION public.site_redeem_invite(text, text, text, text, int, text) TO anon, service_role;
+
+-- Approve or reject a review from the email buttons (added 2026-10-22).
+-- Returns the new status, or NULL if the moderation secret is wrong.
+CREATE FUNCTION public.site_moderate_review(p_moderation_secret text, p_review_id uuid, p_status text)
+RETURNS text
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = ''
+AS $$
+DECLARE
+  v_status text;
+BEGIN
+  IF p_moderation_secret IS NULL
+     OR p_status IS NULL OR p_status NOT IN ('approved', 'rejected')
+     OR encode(sha256(convert_to(p_moderation_secret, 'UTF8')), 'hex') IS DISTINCT FROM
+        (SELECT value FROM public.site_settings WHERE key = 'moderation_secret_sha256') THEN
+    RETURN NULL;
+  END IF;
+
+  UPDATE public.site_reviews SET status = p_status
+  WHERE id = p_review_id
+  RETURNING status INTO v_status;
+  RETURN v_status;
+END;
+$$;
+
+REVOKE ALL ON FUNCTION public.site_moderate_review(text, uuid, text) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.site_moderate_review(text, uuid, text) TO anon, service_role;
