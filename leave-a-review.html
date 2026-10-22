@@ -53,7 +53,7 @@
 
       <div id="lar-form-wrap" hidden>
         <h1>Leave a Review</h1>
-        <p class="lar-sub" id="lar-greeting">How was your experience?</p>
+        <p class="lar-sub">How was your experience working with Built Smart by Rob?</p>
 
         <form id="review-form" novalidate>
           <div class="star-picker" id="star-picker">
@@ -66,8 +66,18 @@
           <input type="hidden" id="rating" name="rating" value="" />
 
           <div class="form-group">
-            <label for="displayName">Name (as you'd like it shown)</label>
-            <input type="text" id="displayName" name="displayName" maxlength="100" required />
+            <label for="firmName">Firm name</label>
+            <input type="text" id="firmName" name="firmName" maxlength="150" required />
+          </div>
+
+          <div class="form-group">
+            <label for="displayName">Your name (optional)</label>
+            <input type="text" id="displayName" name="displayName" maxlength="100" placeholder="Leave blank to show only your firm" />
+          </div>
+
+          <div class="form-group">
+            <label for="reviewerTitle">Title or role (optional)</label>
+            <input type="text" id="reviewerTitle" name="reviewerTitle" maxlength="100" placeholder="e.g. Managing Partner" />
           </div>
 
           <div class="form-group">

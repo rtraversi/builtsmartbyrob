@@ -1,6 +1,6 @@
 (function () {
-  const SUPABASE_URL = 'https://smmloaqrdefdavyxnegl.supabase.co';
-  const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_4FCGcXZckdV8xz0sSZH2Iw_GsfaOlJ6';
+  const SUPABASE_URL = 'https://enowrzljapjkaxpsvdhr.supabase.co';
+  const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_SXXPzDWeL7a6OQJJLCyX4A_JEX3Wi6U';
 
   const statusEl = document.getElementById('reviews-status');
   const gridEl = document.getElementById('reviews-grid');
@@ -29,10 +29,21 @@
     body.textContent = review.body;
     card.appendChild(body);
 
-    const name = document.createElement('div');
-    name.className = 'review-name';
-    name.textContent = review.display_name;
-    card.appendChild(name);
+    // Older reviews have only display_name; newer ones may have only a firm.
+    const person = [review.display_name, review.reviewer_title].filter(Boolean).join(', ');
+    if (person) {
+      const name = document.createElement('div');
+      name.className = 'review-name';
+      name.textContent = person;
+      card.appendChild(name);
+    }
+
+    if (review.firm_name) {
+      const firm = document.createElement('div');
+      firm.className = 'review-firm';
+      firm.textContent = review.firm_name;
+      card.appendChild(firm);
+    }
 
     const date = document.createElement('div');
     date.className = 'review-date';
@@ -45,12 +56,9 @@
   }
 
   fetch(
-    `${SUPABASE_URL}/rest/v1/reviews?select=display_name,rating,body,created_at&status=eq.approved&order=created_at.desc&limit=50`,
+    `${SUPABASE_URL}/rest/v1/site_reviews?select=display_name,firm_name,reviewer_title,rating,body,created_at&status=eq.approved&order=created_at.desc&limit=50`,
     {
-      headers: {
-        apikey: SUPABASE_PUBLISHABLE_KEY,
-        Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
-      },
+      headers: { apikey: SUPABASE_PUBLISHABLE_KEY },
     }
   )
     .then((res) => {

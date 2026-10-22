@@ -53,8 +53,8 @@
     <label for="admin-secret">Admin password</label>
     <input type="password" id="admin-secret" autocomplete="off" />
 
-    <label for="client-name">Client name</label>
-    <input type="text" id="client-name" autocomplete="off" />
+    <label for="note">Private note (optional, only you see this)</label>
+    <input type="text" id="note" autocomplete="off" maxlength="200" placeholder="e.g. Jane at Smith Law, sent 10/22" />
 
     <button id="generate-btn">Generate Link</button>
 
@@ -69,7 +69,7 @@
 
   <script>
     const secretInput = document.getElementById('admin-secret');
-    const nameInput = document.getElementById('client-name');
+    const noteInput = document.getElementById('note');
     const generateBtn = document.getElementById('generate-btn');
     const msgEl = document.getElementById('msg');
     const resultEl = document.getElementById('result');
@@ -90,13 +90,12 @@
 
     generateBtn.addEventListener('click', () => {
       const secret = secretInput.value.trim();
-      const clientName = nameInput.value.trim();
+      const note = noteInput.value.trim();
 
       msgEl.hidden = true;
       resultEl.hidden = true;
 
       if (!secret) { showMsg('Enter the admin password.', true); return; }
-      if (!clientName) { showMsg('Enter a client name.', true); return; }
 
       generateBtn.disabled = true;
       generateBtn.textContent = 'Generating…';
@@ -104,7 +103,7 @@
       fetch('/.netlify/functions/create-invite', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-admin-secret': secret },
-        body: JSON.stringify({ clientName }),
+        body: JSON.stringify({ note }),
       })
         .then((res) => res.json().then((data) => ({ ok: res.ok, status: res.status, data })))
         .then(({ ok, status, data }) => {
@@ -126,7 +125,7 @@
           resultLinkEl.textContent = data.link;
           resultExpEl.textContent = 'Expires ' + new Date(data.expiresAt).toLocaleDateString();
           resultEl.hidden = false;
-          nameInput.value = '';
+          noteInput.value = '';
         })
         .catch(() => {
           generateBtn.disabled = false;

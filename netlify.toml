@@ -4,7 +4,3 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
-
-# Mondays and Thursdays at 12:00 UTC
-[functions."keep-alive"]
-  schedule = "0 12 * * 1,4"

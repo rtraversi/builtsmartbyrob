@@ -5,7 +5,6 @@
   const invalidEl = document.getElementById('lar-invalid');
   const formWrapEl = document.getElementById('lar-form-wrap');
   const successEl = document.getElementById('lar-success');
-  const greetingEl = document.getElementById('lar-greeting');
   const form = document.getElementById('review-form');
   const statusEl = document.getElementById('lar-status');
   const submitBtn = document.getElementById('lar-submit');
@@ -45,8 +44,6 @@
         showOnly(invalidEl);
         return;
       }
-      greetingEl.textContent = `Hi ${data.clientName}, how was your experience?`;
-      document.getElementById('displayName').value = data.clientName;
       showOnly(formWrapEl);
     })
     .catch(() => showOnly(invalidEl));
@@ -55,11 +52,17 @@
     e.preventDefault();
 
     const rating = Number(ratingInput.value);
+    const firmName = document.getElementById('firmName').value.trim();
     const displayName = document.getElementById('displayName').value.trim();
+    const reviewerTitle = document.getElementById('reviewerTitle').value.trim();
     const body = document.getElementById('body').value.trim();
 
     if (!rating) {
       showStatus('Please select a star rating.', 'error');
+      return;
+    }
+    if (!firmName) {
+      showStatus('Please enter your firm name.', 'error');
       return;
     }
     if (!body) {
@@ -73,7 +76,7 @@
     fetch('/.netlify/functions/submit-review', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token, rating, displayName, body }),
+      body: JSON.stringify({ token, rating, firmName, displayName, reviewerTitle, body }),
     })
       .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
       .then(({ ok, data }) => {
